@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+/* ========================================================
+   ViViViT風 ポートフォリオ カスタムスタイル
+   ======================================================== */
+
+:root {
+  --primary: #00d2ff;
+  --primary-dark: #0099cc;
+  --secondary: #3a7bd5;
+  --accent: #ff4081;
+  --bg-dark: #0f172a;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+}
+
+/* スムーススクロール */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ViViViT風カードのホバーエフェクト */
+.work-card {
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, box-shadow;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.06);
+}
+
+.work-card .card-thumb-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card:hover .card-thumb-overlay {
+  opacity: 1;
+}
+
+.work-card .card-thumb img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.work-card:hover .card-thumb img {
+  transform: scale(1.05);
+}
+
+/* フィルターボタンのアクティブスタイル */
+.filter-btn.active {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+}
+
+/* モーダルのアニメーション */
+#work-modal {
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+#work-modal.modal-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#work-modal.modal-closed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#modal-container {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#work-modal.modal-open #modal-container {
+  transform: scale(1) translateY(0);
+}
+
+#work-modal.modal-closed #modal-container {
+  transform: scale(0.96) translateY(20px);
+}
+
+/* Swiperカスタマイズ */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0284c7 !important;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+.swiper-pagination-bullet-active {
+  background: #0284c7 !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}
+
+/* ネオン・サイバーアクセント（Planet Cafeに合わせた宇宙感バッジ） */
+.badge-cyber {
+  background: rgba(0, 210, 255, 0.1);
+  color: #0284c7;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+/* 画像ズーム用のカーソル */
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
