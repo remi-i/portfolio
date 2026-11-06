@@ -1,80 +1,212 @@
 @charset "UTF-8";
 
 /* ========================================================
-   ViViViT風 ポートフォリオ カスタムスタイル
+   Cosmic Cute (宇宙系×かわいい) ポートフォリオ カスタムスタイル
    ======================================================== */
 
 :root {
-  --primary: #00d2ff;
-  --primary-dark: #0099cc;
-  --secondary: #3a7bd5;
-  --accent: #ff4081;
-  --bg-dark: #0f172a;
-  --card-bg: #ffffff;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
+  --space-dark: #090d22;
+  --space-card: rgba(18, 24, 58, 0.75);
+  --space-border: rgba(139, 92, 246, 0.3);
+  --neon-cyan: #38bdf8;
+  --neon-pink: #f472b6;
+  --neon-purple: #c084fc;
+  --neon-yellow: #fde047;
+}
+
+/* フォント */
+body {
+  font-family: 'M PLUS Rounded 1c', 'Quicksand', sans-serif;
+  background-color: var(--space-dark);
+  color: #f1f5f9;
+  overflow-x: hidden;
 }
 
 /* スムーススクロール */
 html {
   scroll-behavior: smooth;
-  font-family: 'Noto Sans JP', 'Inter', sans-serif;
 }
 
-/* カスタムスクロールバー */
+/* カスタム宇宙スクロールバー */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #090d22;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: linear-gradient(180deg, #ec4899, #8b5cf6, #06b6d4);
   border-radius: 9999px;
+  border: 2px solid #090d22;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: linear-gradient(180deg, #f472b6, #a855f7, #38bdf8);
 }
 
-/* ViViViT風カードのホバーエフェクト */
+/* 星空の背景アニメーション */
+.stars-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #f472b6, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #38bdf8, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #fde047, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 230px 190px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 290px 240px, #c084fc, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 350px 80px, #38bdf8, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 420px 300px, #f472b6, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  opacity: 0.65;
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.02); }
+  100% { opacity: 0.55; transform: scale(1); }
+}
+
+/* ふわふわ浮遊アニメーション */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-rev 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes float-rev {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-2deg); }
+}
+
+/* 流れ星アニメーション */
+.shooting-star {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+  transform: rotate(-35deg);
+  animation: shoot 7s infinite ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes shoot {
+  0% { transform: rotate(-35deg) translateX(0); opacity: 0; }
+  5% { opacity: 1; }
+  15% { transform: rotate(-35deg) translateX(-280px); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ネオングロー */
+.glow-text-pink {
+  text-shadow: 0 0 12px rgba(244, 114, 182, 0.6), 0 0 24px rgba(244, 114, 182, 0.3);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6), 0 0 24px rgba(56, 189, 248, 0.3);
+}
+
+.glow-box-pink {
+  box-shadow: 0 0 20px -5px rgba(244, 114, 182, 0.4);
+}
+
+.glow-box-cyan {
+  box-shadow: 0 0 20px -5px rgba(56, 189, 248, 0.4);
+}
+
+/* かわいい宇宙カード */
 .work-card {
-  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-  will-change: transform, box-shadow;
+  background: rgba(18, 25, 60, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.5), rgba(56, 189, 248, 0.5), rgba(192, 132, 252, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .work-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.06);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 35px -10px rgba(56, 189, 248, 0.25), 0 10px 20px -5px rgba(244, 114, 182, 0.2);
 }
 
-.work-card .card-thumb-overlay {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.work-card:hover .card-thumb-overlay {
+.work-card:hover::before {
   opacity: 1;
 }
 
 .work-card .card-thumb img {
-  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .work-card:hover .card-thumb img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* フィルターボタンのアクティブスタイル */
-.filter-btn.active {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+/* フィルターボタン（惑星カプセル風） */
+.filter-btn {
+  background: rgba(22, 31, 74, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  color: #cbd5e1;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: #38bdf8;
   color: #ffffff;
-  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
 }
 
-/* モーダルのアニメーション */
+.filter-btn.active {
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%);
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(236, 72, 153, 0.45);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* モーダル */
 #work-modal {
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #work-modal.modal-open {
@@ -90,7 +222,10 @@ html {
 }
 
 #modal-container {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #0f1538;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.2), 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 #work-modal.modal-open #modal-container {
@@ -98,48 +233,63 @@ html {
 }
 
 #work-modal.modal-closed #modal-container {
-  transform: scale(0.96) translateY(20px);
+  transform: scale(0.92) translateY(20px);
 }
 
-/* Swiperカスタマイズ */
+/* Swiperボタン（宇宙ポッド風） */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #0284c7 !important;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 16px !important;
-  font-weight: bold;
+  color: #38bdf8 !important;
+  background: rgba(15, 21, 56, 0.85) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  backdrop-filter: blur(8px);
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3) !important;
+  transition: all 0.25s ease !important;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: #ffffff;
-  transform: scale(1.1);
+  background: #38bdf8 !important;
+  color: #090d22 !important;
+  transform: scale(1.12);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6) !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.4) !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #0284c7 !important;
-  width: 24px !important;
-  border-radius: 4px !important;
+  background: linear-gradient(90deg, #f472b6, #38bdf8) !important;
+  width: 28px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 10px rgba(244, 114, 182, 0.7);
 }
 
-/* ネオン・サイバーアクセント（Planet Cafeに合わせた宇宙感バッジ） */
-.badge-cyber {
-  background: rgba(0, 210, 255, 0.1);
-  color: #0284c7;
-  border: 1px solid rgba(0, 210, 255, 0.3);
+/* パステルグラデーションバッジ */
+.badge-kawaii-pink {
+  background: rgba(244, 114, 182, 0.15);
+  color: #f472b6;
+  border: 1px solid rgba(244, 114, 182, 0.35);
 }
 
-/* 画像ズーム用のカーソル */
-.cursor-zoom-in {
-  cursor: zoom-in;
+.badge-kawaii-cyan {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.badge-kawaii-purple {
+  background: rgba(192, 132, 252, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+}
+
+.badge-kawaii-yellow {
+  background: rgba(253, 224, 71, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(253, 224, 71, 0.35);
 }

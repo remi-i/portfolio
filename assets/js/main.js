@@ -1,6 +1,6 @@
 /**
- * ViViViT-style Engineering & Design Portfolio
- * Works Data & Interactive Controllers
+ * Cosmic Cute ViViViT-style Engineering & Design Portfolio
+ * Works Data & Interactive Controllers 🪐✨
  */
 
 // 作品データベース
@@ -8,7 +8,7 @@ const worksData = [
   {
     id: "planet-cafe",
     title: "Planet Cafe - 宇宙カフェ オーダーシステム",
-    subtitle: "宇宙をコンセプトにした飲食店のタブレット・モバイル注文Webアプリ",
+    subtitle: "宇宙を旅するカフェのテーブルオーダーWebアプリ 🪐🍩",
     category: "frontend",
     tags: ["HTML5", "CSS3", "JavaScript", "UI/UX Design", "Figma"],
     heroImage: "assets/images/planet-cafe/main.jpg",
@@ -67,7 +67,7 @@ const worksData = [
   {
     id: "galaxy-dashboard",
     title: "CosmoAnalytics - 宇宙観測データ可視化ダッシュボード",
-    subtitle: "天体観測衛星データとテレメトリをリアルタイム可視化するSPA",
+    subtitle: "天体観測衛星データとテレメトリをリアルタイム可視化するSPA 📡",
     category: "webapp",
     tags: ["JavaScript", "Chart.js", "REST API", "Tailwind CSS"],
     heroImage: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=80",
@@ -105,7 +105,7 @@ const worksData = [
   {
     id: "lumina-design-system",
     title: "Lumina Design System - UIコンポーネント集",
-    subtitle: "アクセシビリティとマイクロインタラクションに特化したUIライブラリ",
+    subtitle: "アクセシビリティとマイクロインタラクションに特化したUIライブラリ 🎨",
     category: "ui-ux",
     tags: ["Figma", "CSS3", "Design System", "Storybook"],
     heroImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
@@ -140,9 +140,38 @@ const worksData = [
     githubUrl: "#"
   },
   {
+    id: "cyber-threejs-demo",
+    title: "Orbit-X - 3D惑星シミュレータ",
+    subtitle: "ブラウザ上で太陽系惑星を探索できるインタラクティブ3Dビューア 🪐",
+    category: "creative",
+    tags: ["Three.js", "WebGL", "JavaScript", "Math"],
+    heroImage: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1200&q=80",
+    images: [
+      {
+        src: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1200&q=80",
+        caption: "リアルタイムテクスチャマッピングと公転軌道計算"
+      }
+    ],
+    summary: "WebGL/Three.jsを活用し、Planet Cafeの世界観から着想を得て制作したインタラクティブな3D宇宙空間体験。",
+    role: "3Dグラフィックス実装 / 数理計算",
+    period: "約10日間",
+    techStack: [
+      { name: "Three.js", icon: "fa-solid fa-cube", desc: "シェーダー・ライティング・カメラコントロール" },
+      { name: "JavaScript (ES6+)", icon: "fa-brands fa-js", desc: "ケプラーの法則に基づく惑星運動計算" }
+    ],
+    features: [
+      {
+        title: "60fpsの滑らかな描画",
+        text: "ジオメトリの最適化とテクスチャ圧縮による高パフォーマンス実現。"
+      }
+    ],
+    demoUrl: "#",
+    githubUrl: "#"
+  },
+  {
     id: "artisan-coffee-ec",
     title: "Artisan Coffee Roasters - ECブランドサイト",
-    subtitle: "こだわり豆の定期便と抽出レシピを伝えるブランドコマースサイト",
+    subtitle: "こだわり豆の定期便と抽出レシピを伝えるブランドコマースサイト ☕",
     category: "frontend",
     tags: ["HTML5", "CSS3", "JavaScript", "Responsive"],
     heroImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
@@ -174,8 +203,8 @@ const worksData = [
   },
   {
     id: "portfolio-hub",
-    title: "Interactive Creative Portfolio - 本サイト",
-    subtitle: "CDNを活用した高速＆レスポンシブな画像ギャラリー型ポートフォリオ",
+    title: "Cosmic Cute Portfolio - 本サイト",
+    subtitle: "CDNを活用した高速＆宇宙系かわいい画像ギャラリー型ポートフォリオ ✨",
     category: "frontend",
     tags: ["Tailwind CSS", "JavaScript", "Swiper.js", "CDN"],
     heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
@@ -201,35 +230,6 @@ const worksData = [
     ],
     demoUrl: "#",
     githubUrl: "#"
-  },
-  {
-    id: "cyber-threejs-demo",
-    title: "Orbit-X - 3D惑星シミュレータ",
-    subtitle: "ブラウザ上で太陽系惑星を探索できるインタラクティブ3Dビューア",
-    category: "creative",
-    tags: ["Three.js", "WebGL", "JavaScript", "Math"],
-    heroImage: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1200&q=80",
-    images: [
-      {
-        src: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1200&q=80",
-        caption: "リアルタイムテクスチャマッピングと公転軌道計算"
-      }
-    ],
-    summary: "WebGL/Three.jsを活用し、Planet Cafeの世界観から着想を得て制作したインタラクティブな3D宇宙空間体験。",
-    role: "3Dグラフィックス実装 / 数理計算",
-    period: "約10日間",
-    techStack: [
-      { name: "Three.js", icon: "fa-solid fa-cube", desc: "シェーダー・ライティング・カメラコントロール" },
-      { name: "JavaScript (ES6+)", icon: "fa-brands fa-js", desc: "ケプラーの法則に基づく惑星運動計算" }
-    ],
-    features: [
-      {
-        title: "60fpsの滑らかな描画",
-        text: "ジオメトリの最適化とテクスチャ圧縮による高パフォーマンス実現。"
-      }
-    ],
-    demoUrl: "#",
-    githubUrl: "#"
   }
 ];
 
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
 });
 
-// 作品グリッドの描画
+// 作品グリッドの描画 (宇宙系かわいいカード)
 function renderWorks(category = "all") {
   const container = document.getElementById("works-grid");
   if (!container) return;
@@ -258,30 +258,30 @@ function renderWorks(category = "all") {
   filtered.forEach(work => {
     const isPlanet = work.id === "planet-cafe";
     const card = document.createElement("article");
-    card.className = "work-card bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm flex flex-col cursor-pointer group";
+    card.className = "work-card flex flex-col cursor-pointer group";
     card.setAttribute("data-id", work.id);
     card.setAttribute("data-category", work.category);
 
     card.innerHTML = `
-      <div class="relative card-thumb overflow-hidden bg-slate-900 aspect-[16/10] select-none">
+      <div class="relative card-thumb overflow-hidden bg-slate-950 aspect-[16/10] select-none">
         <img 
           src="${work.heroImage}" 
           alt="${work.title}" 
           loading="lazy" 
           class="w-full h-full object-cover object-center"
         />
-        <div class="card-thumb-overlay absolute inset-0 bg-slate-950/60 backdrop-blur-xs flex flex-col justify-end p-5 text-white">
-          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full ${isPlanet ? 'bg-cyan-500 text-white' : 'bg-white/20 text-white backdrop-blur-md'} w-fit mb-2">
-            <i class="fa-solid fa-eye text-xs"></i> 詳細を見る (${work.images.length}枚の画像)
+        <div class="card-thumb-overlay absolute inset-0 bg-cosmic-950/70 backdrop-blur-xs flex flex-col justify-end p-5 text-white">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full ${isPlanet ? 'bg-gradient-to-r from-pink-500 to-cyan-500 text-white shadow-md' : 'bg-purple-900/80 text-pink-300 border border-purple-400/30'} w-fit mb-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> 詳細を見る (${work.images.length}枚の画像)
           </span>
-          <p class="text-sm text-slate-200 line-clamp-2">${work.subtitle}</p>
+          <p class="text-xs sm:text-sm text-slate-200 line-clamp-2">${work.subtitle}</p>
         </div>
         ${isPlanet ? `
-          <div class="absolute top-3 left-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5 animate-pulse">
-            <i class="fa-solid fa-star"></i> PICKUP WORK
+          <div class="absolute top-3 left-3 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white text-[11px] font-black px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+            <i class="fa-solid fa-star text-yellow-300"></i> SPECIAL
           </div>
         ` : ''}
-        <div class="absolute top-3 right-3 bg-slate-900/70 backdrop-blur-md text-white text-[11px] font-medium px-2 py-0.5 rounded-md flex items-center gap-1">
+        <div class="absolute top-3 right-3 bg-cosmic-950/80 backdrop-blur-md text-pink-300 text-[11px] font-bold px-2.5 py-1 rounded-full border border-purple-500/30 flex items-center gap-1">
           <i class="fa-regular fa-images"></i> ${work.images.length}
         </div>
       </div>
@@ -289,28 +289,28 @@ function renderWorks(category = "all") {
         <div>
           <div class="flex flex-wrap gap-1.5 mb-2.5">
             ${work.tags.slice(0, 3).map(tag => `
-              <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-purple-950/80 text-purple-300 border border-purple-500/30">
                 ${tag}
               </span>
             `).join('')}
             ${work.tags.length > 3 ? `
-              <span class="text-[11px] font-medium px-1.5 py-0.5 rounded bg-slate-50 text-slate-400">
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-cosmic-900 text-slate-400 border border-slate-700">
                 +${work.tags.length - 3}
               </span>
             ` : ''}
           </div>
-          <h3 class="font-bold text-slate-900 text-base md:text-lg group-hover:text-cyan-600 transition-colors line-clamp-1">
+          <h3 class="font-black text-white text-base md:text-lg group-hover:text-cyan-300 transition-colors line-clamp-1">
             ${work.title}
           </h3>
-          <p class="text-slate-500 text-xs md:text-sm mt-1 line-clamp-2 leading-relaxed">
+          <p class="text-slate-300 text-xs md:text-sm mt-1 line-clamp-2 leading-relaxed">
             ${work.subtitle}
           </p>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-          <span class="flex items-center gap-1">
-            <i class="fa-solid fa-user-pen"></i> ${work.role.split('/')[0]}
+        <div class="mt-4 pt-3 border-t border-purple-500/20 flex items-center justify-between text-xs text-slate-400">
+          <span class="flex items-center gap-1.5 text-pink-300/80 font-medium">
+            <i class="fa-solid fa-user-astronaut"></i> ${work.role.split('/')[0]}
           </span>
-          <span class="font-medium text-cyan-600 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+          <span class="font-bold text-cyan-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
             VIEW <i class="fa-solid fa-arrow-right text-[10px]"></i>
           </span>
         </div>
@@ -335,7 +335,7 @@ function setupFilters() {
   });
 }
 
-// モーダルを開く
+// モーダルを開く (宇宙コントロールパネル風)
 function openWorkModal(workId) {
   const work = worksData.find(item => item.id === workId);
   if (!work) return;
@@ -346,21 +346,21 @@ function openWorkModal(workId) {
 
   // Swiperスライド生成
   const slidesHtml = work.images.map((img, idx) => `
-    <div class="swiper-slide flex flex-col items-center justify-center bg-slate-950 rounded-xl overflow-hidden">
-      <div class="w-full h-[280px] sm:h-[380px] md:h-[460px] flex items-center justify-center bg-black/60 relative group">
+    <div class="swiper-slide flex flex-col items-center justify-center bg-black/90 rounded-2xl overflow-hidden border border-purple-500/30">
+      <div class="w-full h-[280px] sm:h-[380px] md:h-[460px] flex items-center justify-center bg-radial from-slate-900 to-black relative group">
         <img 
           src="${img.src}" 
           alt="${work.title} - 画像 ${idx + 1}" 
           class="max-w-full max-h-full object-contain cursor-zoom-in"
           onclick="openLightbox('${img.src}')"
         />
-        <div class="absolute bottom-2 right-2 bg-slate-900/80 text-white text-[10px] px-2 py-1 rounded backdrop-blur-xs pointer-events-none">
-          <i class="fa-solid fa-magnifying-glass-plus"></i> クリックで拡大
+        <div class="absolute bottom-3 right-3 bg-cosmic-950/90 text-pink-300 text-[11px] font-bold px-3 py-1.5 rounded-full border border-pink-500/30 backdrop-blur-md pointer-events-none flex items-center gap-1.5">
+          <i class="fa-solid fa-magnifying-glass-plus text-cyan-400"></i> タップで拡大
         </div>
       </div>
       ${img.caption ? `
-        <div class="w-full bg-slate-900 text-slate-300 text-xs sm:text-sm p-3.5 border-t border-slate-800 text-left">
-          <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-cyan-400 mr-1.5"></i>${img.caption}</p>
+        <div class="w-full bg-cosmic-900/95 text-slate-200 text-xs sm:text-sm p-4 border-t border-purple-500/20 text-left">
+          <p class="leading-relaxed"><i class="fa-solid fa-sparkles text-yellow-300 mr-2"></i>${img.caption}</p>
         </div>
       ` : ''}
     </div>
@@ -369,17 +369,17 @@ function openWorkModal(workId) {
   // 特徴・工夫点の生成
   const featuresHtml = work.features && work.features.length > 0 ? `
     <div class="mt-6">
-      <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
-        <i class="fa-solid fa-lightbulb text-amber-500"></i> こだわり・UI設計の工夫
+      <h4 class="text-xs font-black uppercase tracking-wider text-pink-400 mb-3 flex items-center gap-2">
+        <i class="fa-solid fa-wand-magic-sparkles text-yellow-300"></i> こだわり &amp; UI設計の工夫
       </h4>
       <div class="space-y-3">
         ${work.features.map(f => `
-          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70">
-            <h5 class="text-xs sm:text-sm font-bold text-slate-800 mb-1 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+          <div class="p-4 rounded-2xl bg-cosmic-900/80 border border-purple-500/30 hover:border-pink-400/50 transition-colors">
+            <h5 class="text-xs sm:text-sm font-bold text-white mb-1 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-cyan-400"></span>
               ${f.title}
             </h5>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${f.text}</p>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${f.text}</p>
           </div>
         `).join('')}
       </div>
@@ -389,18 +389,18 @@ function openWorkModal(workId) {
   // 技術スタックの生成
   const techStackHtml = work.techStack && work.techStack.length > 0 ? `
     <div class="mt-6">
-      <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
-        <i class="fa-solid fa-code text-cyan-500"></i> 使用技術・担当範囲
+      <h4 class="text-xs font-black uppercase tracking-wider text-cyan-300 mb-3 flex items-center gap-2">
+        <i class="fa-solid fa-code text-cyan-400"></i> 使用技術・担当範囲
       </h4>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         ${work.techStack.map(t => `
-          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200/60 flex items-start gap-2.5">
-            <div class="w-7 h-7 rounded-md bg-white shadow-xs flex items-center justify-center text-cyan-600 shrink-0 text-base">
+          <div class="p-3.5 rounded-xl bg-cosmic-900/80 border border-cyan-500/20 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-cosmic-950 border border-cyan-400/40 flex items-center justify-center text-cyan-400 shrink-0 text-base">
               <i class="${t.icon}"></i>
             </div>
             <div>
-              <p class="text-xs font-bold text-slate-800">${t.name}</p>
-              <p class="text-[11px] text-slate-500 leading-tight mt-0.5">${t.desc}</p>
+              <p class="text-xs font-bold text-white">${t.name}</p>
+              <p class="text-[11px] text-slate-400 leading-tight mt-0.5">${t.desc}</p>
             </div>
           </div>
         `).join('')}
@@ -408,68 +408,68 @@ function openWorkModal(workId) {
     </div>
   ` : '';
 
-  // モーダルHTML構成（大画面では左右2カラム、スマホでは1カラム）
+  // モーダル全体の組み立て
   modalBody.innerHTML = `
-    <div class="p-4 sm:p-6 md:p-8">
-      <!-- ヘッダー -->
-      <div class="mb-5 border-b border-slate-100 pb-4">
-        <div class="flex flex-wrap items-center gap-2 mb-2">
-          ${work.tags.map(tag => `
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 border border-cyan-100">
-              ${tag}
-            </span>
-          `).join('')}
+    <!-- ヘッダー -->
+    <div class="mb-6 border-b border-purple-500/20 pb-5">
+      <div class="flex flex-wrap items-center gap-2 mb-2.5">
+        ${work.tags.map(tag => `
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-950/80 text-pink-300 border border-purple-400/40">
+            ${tag}
+          </span>
+        `).join('')}
+      </div>
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">
+        ${work.title}
+      </h2>
+      <p class="text-sm sm:text-base text-slate-300 mt-1">
+        ${work.subtitle}
+      </p>
+    </div>
+
+    <!-- スライダー & ギャラリー -->
+    <div class="mb-7">
+      <div class="swiper modal-swiper rounded-2xl overflow-hidden shadow-2xl">
+        <div class="swiper-wrapper">
+          ${slidesHtml}
         </div>
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
-          ${work.title}
-        </h2>
-        <p class="text-sm sm:text-base text-slate-500 mt-1">
-          ${work.subtitle}
-        </p>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- 詳細情報・解説 -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- 左2列: 概要と工夫 -->
+      <div class="lg:col-span-2">
+        <div>
+          <h4 class="text-xs font-black uppercase tracking-wider text-cyan-300 mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-satellite text-cyan-400"></i> プロジェクト概要
+          </h4>
+          <p class="text-slate-200 text-sm sm:text-base leading-relaxed bg-cosmic-900/80 p-5 rounded-2xl border border-purple-500/30">
+            ${work.summary}
+          </p>
+        </div>
+        ${featuresHtml}
       </div>
 
-      <!-- スライダー & ギャラリー -->
-      <div class="mb-6">
-        <div class="swiper modal-swiper rounded-2xl overflow-hidden shadow-lg border border-slate-800">
-          <div class="swiper-wrapper">
-            ${slidesHtml}
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- 詳細情報・解説 -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- 左2列: 概要と工夫 -->
-        <div class="lg:col-span-2">
+      <!-- 右1列: メタデータ・技術情報 -->
+      <div class="lg:col-span-1 space-y-4">
+        <div class="bg-cosmic-900/80 p-5 rounded-2xl border border-purple-500/30 space-y-3.5">
+          <h4 class="text-xs font-black uppercase tracking-wider text-pink-400 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-circle-info"></i> ミッション詳細
+          </h4>
           <div>
-            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-2">
-              <i class="fa-solid fa-file-lines text-cyan-500"></i> プロジェクト概要
-            </h4>
-            <p class="text-slate-700 text-sm sm:text-base leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-200/60">
-              ${work.summary}
-            </p>
+            <p class="text-[11px] font-bold text-slate-400">担当領域</p>
+            <p class="text-xs sm:text-sm font-bold text-white mt-0.5">${work.role}</p>
           </div>
-          ${featuresHtml}
-        </div>
-
-        <!-- 右1列: メタデータ・技術情報 -->
-        <div class="lg:col-span-1 space-y-4">
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 space-y-3">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">プロジェクト詳細</h4>
-            <div>
-              <p class="text-[11px] font-semibold text-slate-400">担当領域</p>
-              <p class="text-xs sm:text-sm font-bold text-slate-800 mt-0.5">${work.role}</p>
-            </div>
-            <div>
-              <p class="text-[11px] font-semibold text-slate-400">制作期間</p>
-              <p class="text-xs sm:text-sm font-bold text-slate-800 mt-0.5">${work.period}</p>
-            </div>
+          <div>
+            <p class="text-[11px] font-bold text-slate-400">制作期間</p>
+            <p class="text-xs sm:text-sm font-bold text-white mt-0.5">${work.period}</p>
           </div>
-          ${techStackHtml}
         </div>
+        ${techStackHtml}
       </div>
     </div>
   `;
@@ -477,7 +477,7 @@ function openWorkModal(workId) {
   // モーダル表示
   modal.classList.remove("modal-closed");
   modal.classList.add("modal-open");
-  document.body.style.overflow = "hidden"; // 背景スクロール禁止
+  document.body.style.overflow = "hidden"; // 背景スクロール固定
 
   // Swiper初期化
   if (modalSwiper) {
@@ -520,7 +520,6 @@ function setupModalEvents() {
   }
 
   if (modal) {
-    // 背景クリックで閉じる
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
         closeWorkModal();
@@ -545,8 +544,8 @@ function openLightbox(src) {
     lightbox.id = "image-lightbox";
     lightbox.className = "fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out opacity-0 transition-opacity duration-200 pointer-events-none";
     lightbox.innerHTML = `
-      <img id="lightbox-img" src="" alt="拡大画像" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-transform duration-300 transform scale-95" />
-      <button class="absolute top-5 right-5 text-white/80 hover:text-white text-2xl w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+      <img id="lightbox-img" src="" alt="拡大画像" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-purple-500/30 transition-transform duration-300 transform scale-95" />
+      <button class="absolute top-5 right-5 text-white/80 hover:text-white text-2xl w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
         <i class="fa-solid fa-xmark"></i>
       </button>
     `;
