@@ -1,64 +1,64 @@
 /**
- * Cosmic Gyaru ViViViT-style Engineering & Design Portfolio
- * Works Data & Interactive Controllers 💖🪐✨
+ * Cosmic Deco Portfolio
+ * Interactive Controllers & Sparkle Animations 💎💖🪐✨
  */
 
-// 作品データベース
+// 作品データベース (タイトルはキュート、解説は論理的でプロフェッショナル)
 const worksData = [
   {
     id: "planet-cafe",
-    title: "Planet Cafe - 宇宙カフェ オーダーシステム 🪐🍩",
-    subtitle: "宇宙旅の途中で立ち寄る近未来カフェの爆盛れオーダーWebアプリ💖",
+    title: "Planet Cafe - 宇宙カフェ テーブルオーダーシステム 🪐🍩",
+    subtitle: "宇宙をコンセプトにした飲食店のタブレット・モバイル注文Webアプリケーション",
     category: "frontend",
     tags: ["HTML5", "CSS3", "JavaScript", "UI/UX Design", "Figma"],
     heroImage: "assets/images/planet-cafe/main.jpg",
     images: [
       {
         src: "assets/images/planet-cafe/main.jpg",
-        caption: "【メイン注文画面】青く輝く満月＆漆黒の宇宙空間にネオンブルーのサイバーUI！惑星ドーナツのシズル感が宇宙イチ映える〜✨"
+        caption: "【メイン注文画面】青く輝く満月と宇宙空間を背景にしたネオンサイバーUI。惑星ドーナツメニューのシズル感と視覚的階層を重視したデザイン。"
       },
       {
         src: "assets/images/planet-cafe/order.jpg",
-        caption: "【注文・カート確認画面】宇宙飛行士のグラフィックと数量カウンター！合計金額の自動計算ロジックもJSでサクッと実装済み✌️"
+        caption: "【注文・カート確認画面】宇宙飛行士のグラフィックと数量カウンター。JavaScriptによる合計金額の自動計算機能を実装。"
       },
       {
         src: "assets/images/planet-cafe/ui-annotation.jpg",
-        caption: "【UI/UXのこだわり】スクロールバーの視認性爆上げで「メニュー下に続いてるよ！」って自然に伝わる設計＆カードコンポーネントで管理しやすさ神！"
+        caption: "【UI/UXの工夫点】スクロールバーの視認性向上により下部にメニューが続いていることを直感的に伝達。カードコンポーネント設計により保守性・拡張性を向上。"
       },
       {
         src: "assets/images/planet-cafe/concept-map.jpg",
-        caption: "【デザインポジショニングマップ】「暖かい / クール」「ファンタジー / サイバー」の4象限で世界観とトンマナをガチ分析！迷いゼロの設計図。"
+        caption: "【デザインポジショニングマップ】「暖かい / クール」「ファンタジー / サイバー」の4象限で世界観とトンマナを緻密に分析・定義。"
       },
       {
         src: "assets/images/planet-cafe/figma-workspace.jpg",
-        caption: "【Figma設計ワークスペース】アイコンセット、アセット、UIパターン（Android Expanded）、全画面遷移プロトタイプ！"
+        caption: "【Figma設計ワークスペース】アイコンセット、アセット、UIパターン（Android Expanded）、画面遷移全体のプロトタイプ設計。"
       }
     ],
-    summary: "「宇宙旅行中に立ち寄る近未来のカフェ」をテーマに、企画からFigmaでのUI/UX設計、そしてHTML/CSS/JavaScriptによるフロントエンド実装までを一貫して手掛けたテーブルオーダーシステムです！ただ派手にするんじゃなくて、注文完了までのストレスを極限までゼロにする動線設計にこだわりました💅✨",
+    summary: "「宇宙旅行中に立ち寄る近未来のカフェ」をテーマに、企画・ポジショニング分析からFigmaでのUI/UX設計、そしてHTML5/CSS3/JavaScriptによるフロントエンド実装までを一貫して手掛けたテーブルオーダーシステムです。独特の世界観を表現しながらも、注文完了までの導線を極力シンプルにし、誤タップを防ぐUI設計を徹底しました。",
     role: "企画 / UI・UXデザイン / フロントエンド開発",
-    period: "約2週間（集中制作！）",
+    period: "約2週間",
     techStack: [
-      { name: "HTML5", icon: "fa-brands fa-html5", desc: "セマンティックなマークアップで保守性＆アクセシビリティも抜かりなし！" },
+      { name: "HTML5", icon: "fa-brands fa-html5", desc: "セマンティックなマークアップによる保守性とアクセシビリティの確保" },
       { name: "CSS3", icon: "fa-brands fa-css3-alt", desc: "ネオン発光エフェクト、Flexbox/Gridによるカードレイアウト、カスタムスクロールバー" },
       { name: "JavaScript", icon: "fa-brands fa-js", desc: "カートの数量増減、動的合計金額計算、画面遷移処理をVanilla JSで軽快に実装" },
       { name: "Figma", icon: "fa-brands fa-figma", desc: "ポジショニングマップ分析、UIコンポーネント作成、プロトタイピング" }
     ],
     features: [
       {
-        title: "カードコンポーネント化で拡張性＆メンテ性爆アゲ！",
-        text: "メニュー項目を独立したカードコンポーネントとしてCSS・DOM構造を設計。商品追加やレイアウト変更が秒でできる設計にしてます。"
+        title: "カードコンポーネント化による拡張性と保守性の担保",
+        text: "メニュー品目を独立した再利用可能なカードコンポーネントとしてCSS・DOM構造を設計。品目の追加や並び替え、レイアウトの変更を容易に行える設計にしました。"
       },
       {
-        title: "「下にもあるよ！」が一目で伝わるスクロール誘導UI",
-        text: "ファーストビューでメニューが下に続いていることがパッと見で直感的に分かるよう、スクロールバーの視認性とチラ見せ配置を徹底工夫！"
+        title: "直感的なスクロール誘導UIと視認性の工夫",
+        text: "ファーストビューでメニューが下に続いていることが一目で伝わるよう、スクロールバーの視認性を高め、下部カードのチラ見せ配置を採用しました。"
       },
       {
-        title: "世界観を崩さないネオン×サイバーデザイン",
-        text: "青を基調としたネオンボーダー、惑星の質感ドーナツ、宇宙飛行士など、非日常感を楽しめるリッチなビジュアル設計。"
+        title: "世界観を崩さないサイバー×ネオンデザイン",
+        text: "青を基調としたネオンボーダー、惑星の質感を活かしたドーナツ、宇宙飛行士など、非日常感を楽しめるリッチなビジュアル体験を構築しました。"
       },
       {
-        title: "秒で反映！リアルタイムな注文集計ロジック",
-        text: "JavaScriptを用いて各商品の数量変更ボタン（+/-）を押した瞬間に即座に合計金額が計算される気持ちいい注文フローを構築。"
+        title: "リアルタイムな注文集計ロジックの実装",
+        text: "JavaScriptを用いて各商品の数量変更ボタン（+/-）を押した際に即座に合計金額が反映される直感的な注文フローを構築しました。"
       }
     ],
     demoUrl: "#",
@@ -67,7 +67,7 @@ const worksData = [
   {
     id: "galaxy-dashboard",
     title: "CosmoAnalytics - 宇宙観測データ可視化ダッシュボード 📡",
-    subtitle: "天体観測衛星データとテレメトリをリアルタイム可視化するSPA✨",
+    subtitle: "天体観測衛星データとテレメトリをリアルタイム可視化するSPA",
     category: "webapp",
     tags: ["JavaScript", "Chart.js", "REST API", "Tailwind CSS"],
     heroImage: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=80",
@@ -105,7 +105,7 @@ const worksData = [
   {
     id: "lumina-design-system",
     title: "Lumina Design System - UIコンポーネント集 🎨",
-    subtitle: "アクセシビリティとマイクロインタラクションに特化したUIライブラリ💖",
+    subtitle: "アクセシビリティとマイクロインタラクションに特化したUIライブラリ",
     category: "ui-ux",
     tags: ["Figma", "CSS3", "Design System", "Storybook"],
     heroImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
@@ -142,7 +142,7 @@ const worksData = [
   {
     id: "cyber-threejs-demo",
     title: "Orbit-X - 3D惑星シミュレータ 🪐",
-    subtitle: "ブラウザ上で太陽系惑星を探索できるインタラクティブ3Dビューア✨",
+    subtitle: "ブラウザ上で太陽系惑星を探索できるインタラクティブ3Dビューア",
     category: "creative",
     tags: ["Three.js", "WebGL", "JavaScript", "Math"],
     heroImage: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1200&q=80",
@@ -171,7 +171,7 @@ const worksData = [
   {
     id: "artisan-coffee-ec",
     title: "Artisan Coffee Roasters - ECブランドサイト ☕",
-    subtitle: "こだわり豆の定期便と抽出レシピを伝えるブランドコマースサイト🌺",
+    subtitle: "こだわり豆の定期便と抽出レシピを伝えるブランドコマースサイト",
     category: "frontend",
     tags: ["HTML5", "CSS3", "JavaScript", "Responsive"],
     heroImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
@@ -203,8 +203,8 @@ const worksData = [
   },
   {
     id: "portfolio-hub",
-    title: "Cosmic Gyaru Portfolio - 本サイト 💖",
-    subtitle: "宇宙×ギャル！CDNで高速動作するViViViT風爆盛れポートフォリオサイト✨",
+    title: "Cosmic Deco Portfolio - 本サイト 💎✨",
+    subtitle: "CDNを活用した高速＆宇宙デコレーション画像ギャラリー型ポートフォリオ",
     category: "frontend",
     tags: ["Tailwind CSS", "JavaScript", "Swiper.js", "CDN"],
     heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
@@ -242,9 +242,11 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFilters();
   setupModalEvents();
   setupMobileMenu();
+  initSparkleCanvas();
+  initMouseSparkles();
 });
 
-// 作品グリッドの描画 (宇宙×ギャル デコカード)
+// 作品グリッドの描画 (ラインストーンデコカード)
 function renderWorks(category = "all") {
   const container = document.getElementById("works-grid");
   if (!container) return;
@@ -270,18 +272,18 @@ function renderWorks(category = "all") {
           loading="lazy" 
           class="w-full h-full object-cover object-center"
         />
-        <div class="card-thumb-overlay absolute inset-0 bg-gyaru-black/75 backdrop-blur-xs flex flex-col justify-end p-5 text-white">
-          <span class="inline-flex items-center gap-1.5 text-xs font-black px-3.5 py-1.5 rounded-full ${isPlanet ? 'bg-gradient-to-r from-gyaru-hotpink via-gyaru-purple to-gyaru-cyan text-white shadow-lg border border-gyaru-gold' : 'bg-gyaru-hotpink/80 text-white border border-gyaru-hotpink'} w-fit mb-2">
-            👀 タップして超詳しく見る💖 (${work.images.length}枚)
+        <div class="card-thumb-overlay absolute inset-0 bg-deco-black/75 backdrop-blur-xs flex flex-col justify-end p-5 text-white">
+          <span class="inline-flex items-center gap-1.5 text-xs font-black px-3.5 py-1 rounded-full ${isPlanet ? 'bg-gradient-to-r from-deco-hotpink via-deco-purple to-deco-cyan text-white shadow-lg border border-deco-gold' : 'bg-deco-pink/80 text-white border border-deco-pink'} w-fit mb-2">
+            詳細を見る 🔍💖 (${work.images.length}枚)
           </span>
-          <p class="text-xs sm:text-sm text-pink-100 line-clamp-2 font-bold">${work.subtitle}</p>
+          <p class="text-xs sm:text-sm text-slate-200 line-clamp-2 font-medium">${work.subtitle}</p>
         </div>
         ${isPlanet ? `
-          <div class="absolute top-3 left-3 bg-gradient-to-r from-gyaru-hotpink via-gyaru-purple to-gyaru-cyan text-white text-[11px] font-black px-3.5 py-1 rounded-full shadow-lg flex items-center gap-1.5 border border-gyaru-gold">
-            👑 宇宙イチ推し！
+          <div class="absolute top-3 left-3 bg-gradient-to-r from-deco-hotpink via-deco-purple to-deco-cyan text-white text-[11px] font-black px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5 border border-deco-gold">
+            👑 PICKUP WORK ✨
           </div>
         ` : ''}
-        <div class="absolute top-3 right-3 bg-gyaru-black/85 backdrop-blur-md text-gyaru-cyan text-[11px] font-black px-3 py-1 rounded-full border border-gyaru-cyan flex items-center gap-1">
+        <div class="absolute top-3 right-3 bg-deco-black/85 backdrop-blur-md text-deco-cyan text-[11px] font-black px-3 py-1 rounded-full border border-deco-cyan flex items-center gap-1">
           📸 ${work.images.length}枚
         </div>
       </div>
@@ -289,29 +291,29 @@ function renderWorks(category = "all") {
         <div>
           <div class="flex flex-wrap gap-1.5 mb-2.5">
             ${work.tags.slice(0, 3).map(tag => `
-              <span class="text-[11px] font-black px-2.5 py-0.5 rounded-full bg-gyaru-hotpink/20 text-pink-300 border border-gyaru-hotpink/50">
+              <span class="text-[11px] font-black px-2.5 py-0.5 rounded-full bg-deco-pink/20 text-pink-300 border border-deco-pink/50">
                 #${tag}
               </span>
             `).join('')}
             ${work.tags.length > 3 ? `
-              <span class="text-[11px] font-black px-2 py-0.5 rounded-full bg-gyaru-dark text-slate-400 border border-slate-700">
+              <span class="text-[11px] font-black px-2 py-0.5 rounded-full bg-deco-dark text-slate-400 border border-slate-700">
                 +${work.tags.length - 3}
               </span>
             ` : ''}
           </div>
-          <h3 class="font-black text-white text-base md:text-lg group-hover:text-gyaru-cyan transition-colors line-clamp-1">
+          <h3 class="font-black text-white text-base md:text-lg group-hover:text-deco-cyan transition-colors line-clamp-1 cute-title">
             ${work.title}
           </h3>
-          <p class="text-pink-100 text-xs md:text-sm mt-1.5 line-clamp-2 leading-relaxed font-bold">
+          <p class="text-slate-300 text-xs md:text-sm mt-1.5 line-clamp-2 leading-relaxed font-medium">
             ${work.subtitle}
           </p>
         </div>
-        <div class="mt-4 pt-3.5 border-t border-gyaru-hotpink/30 flex items-center justify-between text-xs text-pink-200">
+        <div class="mt-4 pt-3.5 border-t border-deco-pink/30 flex items-center justify-between text-xs text-pink-200">
           <span class="flex items-center gap-1.5 font-bold">
-            🌺 ${work.role.split('/')[0]}
+            🪐 ${work.role.split('/')[0]}
           </span>
-          <span class="font-black text-gyaru-cyan flex items-center gap-1 group-hover:translate-x-1.5 transition-transform">
-            CHECK <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          <span class="font-black text-deco-cyan flex items-center gap-1 group-hover:translate-x-1.5 transition-transform">
+            VIEW <i class="fa-solid fa-arrow-right text-[10px]"></i>
           </span>
         </div>
       </div>
@@ -335,7 +337,7 @@ function setupFilters() {
   });
 }
 
-// モーダルを開く (ギャルコクピット風)
+// モーダルを開く (タイトルはキュート、解説は論理的で丁寧)
 function openWorkModal(workId) {
   const work = worksData.find(item => item.id === workId);
   if (!work) return;
@@ -346,7 +348,7 @@ function openWorkModal(workId) {
 
   // Swiperスライド生成
   const slidesHtml = work.images.map((img, idx) => `
-    <div class="swiper-slide flex flex-col items-center justify-center bg-black/95 rounded-2xl overflow-hidden border-2 border-gyaru-hotpink">
+    <div class="swiper-slide flex flex-col items-center justify-center bg-black/95 rounded-2xl overflow-hidden border-2 border-deco-pink">
       <div class="w-full h-[280px] sm:h-[380px] md:h-[460px] flex items-center justify-center bg-radial from-slate-900 to-black relative group">
         <img 
           src="${img.src}" 
@@ -354,32 +356,32 @@ function openWorkModal(workId) {
           class="max-w-full max-h-full object-contain cursor-zoom-in"
           onclick="openLightbox('${img.src}')"
         />
-        <div class="absolute bottom-3 right-3 bg-gyaru-black/90 text-gyaru-gold text-[11px] font-black px-3.5 py-1.5 rounded-full border border-gyaru-gold backdrop-blur-md pointer-events-none flex items-center gap-1.5">
-          🔍 タップで拡大💖
+        <div class="absolute bottom-3 right-3 bg-deco-black/90 text-deco-gold text-[11px] font-black px-3.5 py-1.5 rounded-full border border-deco-gold backdrop-blur-md pointer-events-none flex items-center gap-1.5">
+          🔍 クリックで拡大表示 ✨
         </div>
       </div>
       ${img.caption ? `
-        <div class="w-full bg-gyaru-dark text-pink-100 text-xs sm:text-sm p-4 border-t-2 border-gyaru-hotpink text-left font-bold">
-          <p class="leading-relaxed"><span class="text-gyaru-gold mr-2 text-base">✨</span>${img.caption}</p>
+        <div class="w-full bg-deco-dark text-slate-200 text-xs sm:text-sm p-4 border-t-2 border-deco-pink text-left font-medium">
+          <p class="leading-relaxed"><span class="text-deco-gold mr-2 text-base">✨</span>${img.caption}</p>
         </div>
       ` : ''}
     </div>
   `).join('');
 
-  // 特徴・工夫点の生成
+  // 特徴・工夫点の生成 (論理的かつプロフェッショナルな解説)
   const featuresHtml = work.features && work.features.length > 0 ? `
     <div class="mt-6">
-      <h4 class="text-xs font-black uppercase tracking-wider text-gyaru-gold mb-3 flex items-center gap-2">
-        <span>⚡️</span> こだわり＆UI設計の神ポイント
+      <h4 class="text-xs font-black uppercase tracking-wider text-deco-gold mb-3 flex items-center gap-2">
+        <span>⚡️</span> UI設計・フロントエンド実装の工夫
       </h4>
       <div class="space-y-3">
         ${work.features.map(f => `
-          <div class="p-4 rounded-2xl bg-gyaru-dark/95 border-2 border-gyaru-hotpink/60 hover:border-gyaru-cyan transition-colors">
+          <div class="p-4 rounded-2xl bg-deco-dark/95 border-2 border-deco-pink/60 hover:border-deco-cyan transition-colors">
             <h5 class="text-xs sm:text-sm font-black text-white mb-1.5 flex items-center gap-2">
-              <span class="text-gyaru-hotpink">💖</span>
+              <span class="text-deco-pink">💎</span>
               ${f.title}
             </h5>
-            <p class="text-xs sm:text-sm text-pink-100 leading-relaxed font-bold">${f.text}</p>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">${f.text}</p>
           </div>
         `).join('')}
       </div>
@@ -389,18 +391,18 @@ function openWorkModal(workId) {
   // 技術スタックの生成
   const techStackHtml = work.techStack && work.techStack.length > 0 ? `
     <div class="mt-6">
-      <h4 class="text-xs font-black uppercase tracking-wider text-gyaru-cyan mb-3 flex items-center gap-2">
-        <span>💻</span> 使用技術＆担当範囲
+      <h4 class="text-xs font-black uppercase tracking-wider text-deco-cyan mb-3 flex items-center gap-2">
+        <span>💻</span> 使用技術 &amp; 担当範囲
       </h4>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         ${work.techStack.map(t => `
-          <div class="p-4 rounded-2xl bg-gyaru-dark/95 border border-gyaru-cyan/40 flex items-start gap-3">
-            <div class="w-9 h-9 rounded-xl bg-gyaru-black border-2 border-gyaru-cyan flex items-center justify-center text-gyaru-cyan shrink-0 text-base shadow-sm">
+          <div class="p-4 rounded-2xl bg-deco-dark/95 border border-deco-cyan/40 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl bg-deco-black border-2 border-deco-cyan flex items-center justify-center text-deco-cyan shrink-0 text-base shadow-sm">
               <i class="${t.icon}"></i>
             </div>
             <div>
               <p class="text-xs font-black text-white">${t.name}</p>
-              <p class="text-[11px] text-pink-200 leading-tight mt-0.5 font-bold">${t.desc}</p>
+              <p class="text-[11px] text-slate-300 leading-tight mt-0.5 font-medium">${t.desc}</p>
             </div>
           </div>
         `).join('')}
@@ -411,18 +413,18 @@ function openWorkModal(workId) {
   // モーダル全体の組み立て
   modalBody.innerHTML = `
     <!-- ヘッダー -->
-    <div class="mb-6 border-b-2 border-gyaru-hotpink/40 pb-5">
+    <div class="mb-6 border-b-2 border-deco-pink/40 pb-5">
       <div class="flex flex-wrap items-center gap-2 mb-3">
         ${work.tags.map(tag => `
-          <span class="text-xs font-black px-3.5 py-1 rounded-full bg-gyaru-hotpink text-white shadow-md border border-gyaru-gold">
+          <span class="text-xs font-black px-3.5 py-1 rounded-full bg-deco-pink text-white shadow-md border border-deco-gold">
             #${tag}
           </span>
         `).join('')}
       </div>
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight cute-title">
         ${work.title}
       </h2>
-      <p class="text-sm sm:text-base text-pink-200 mt-1.5 font-bold">
+      <p class="text-sm sm:text-base text-pink-200 mt-1.5 font-medium">
         ${work.subtitle}
       </p>
     </div>
@@ -443,10 +445,10 @@ function openWorkModal(workId) {
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <div class="lg:col-span-2">
         <div>
-          <h4 class="text-xs font-black uppercase tracking-wider text-gyaru-cyan mb-2.5 flex items-center gap-2">
+          <h4 class="text-xs font-black uppercase tracking-wider text-deco-cyan mb-2.5 flex items-center gap-2">
             <span>🪐</span> プロジェクト概要
           </h4>
-          <p class="text-white text-sm sm:text-base leading-relaxed bg-gyaru-dark/95 p-5 rounded-2xl border-2 border-gyaru-hotpink/50 font-bold">
+          <p class="text-slate-100 text-sm sm:text-base leading-relaxed bg-deco-dark/95 p-5 rounded-2xl border-2 border-deco-pink/50 font-medium">
             ${work.summary}
           </p>
         </div>
@@ -454,9 +456,9 @@ function openWorkModal(workId) {
       </div>
 
       <div class="lg:col-span-1 space-y-4">
-        <div class="bg-gyaru-dark/95 p-5 rounded-2xl border-2 border-gyaru-hotpink/50 space-y-4">
-          <h4 class="text-xs font-black uppercase tracking-wider text-gyaru-gold mb-2 flex items-center gap-1.5">
-            <span>🌺</span> 制作データ
+        <div class="bg-deco-dark/95 p-5 rounded-2xl border-2 border-deco-pink/50 space-y-4">
+          <h4 class="text-xs font-black uppercase tracking-wider text-deco-gold mb-2 flex items-center gap-1.5">
+            <span>💎</span> 制作データ
           </h4>
           <div>
             <p class="text-[11px] font-black text-pink-300">担当領域</p>
@@ -472,12 +474,10 @@ function openWorkModal(workId) {
     </div>
   `;
 
-  // モーダル表示
   modal.classList.remove("modal-closed");
   modal.classList.add("modal-open");
   document.body.style.overflow = "hidden";
 
-  // Swiper初期化
   if (modalSwiper) {
     modalSwiper.destroy(true, true);
   }
@@ -508,24 +508,18 @@ function closeWorkModal() {
   document.body.style.overflow = "";
 }
 
-// モーダルイベントの設定
+// モーダルイベント
 function setupModalEvents() {
   const closeBtn = document.getElementById("modal-close-btn");
   const modal = document.getElementById("work-modal");
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeWorkModal);
-  }
-
+  if (closeBtn) closeBtn.addEventListener("click", closeWorkModal);
   if (modal) {
     modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        closeWorkModal();
-      }
+      if (e.target === modal) closeWorkModal();
     });
   }
 
-  // ESCキーで閉じる
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeLightbox();
@@ -542,8 +536,8 @@ function openLightbox(src) {
     lightbox.id = "image-lightbox";
     lightbox.className = "fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out opacity-0 transition-opacity duration-200 pointer-events-none";
     lightbox.innerHTML = `
-      <img id="lightbox-img" src="" alt="拡大画像" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border-2 border-gyaru-hotpink transition-transform duration-300 transform scale-95" />
-      <button class="absolute top-5 right-5 text-white hover:text-gyaru-gold text-2xl w-11 h-11 rounded-full bg-gyaru-hotpink flex items-center justify-center border-2 border-gyaru-gold shadow-lg">
+      <img id="lightbox-img" src="" alt="拡大画像" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border-2 border-deco-pink transition-transform duration-300 transform scale-95" />
+      <button class="absolute top-5 right-5 text-white hover:text-deco-gold text-2xl w-11 h-11 rounded-full bg-deco-pink flex items-center justify-center border-2 border-deco-gold shadow-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
     `;
@@ -597,4 +591,130 @@ function setupMobileMenu() {
       btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
     });
   });
+}
+
+// ========================================================
+// 🌟 背景キラキラアニメーション (Canvas Particles)
+// ========================================================
+function initSparkleCanvas() {
+  const canvas = document.getElementById("sparkle-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  // キラキラ粒子の生成
+  const particles = [];
+  const particleCount = 65;
+  const colors = ["#ff2a8d", "#ffd700", "#00f0ff", "#ffffff", "#ff7ebb", "#9d4edd"];
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 3 + 1,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: Math.random(),
+      speedAlpha: Math.random() * 0.02 + 0.005,
+      vy: -(Math.random() * 0.4 + 0.2),
+      vx: (Math.random() - 0.5) * 0.3,
+      isStar: Math.random() > 0.4
+    });
+  }
+
+  // 描画ループ
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    particles.forEach(p => {
+      p.y += p.vy;
+      p.x += p.vx;
+      p.alpha += p.speedAlpha;
+
+      if (p.alpha > 1 || p.alpha < 0) {
+        p.speedAlpha = -p.speedAlpha;
+      }
+
+      // 画面上部に出たら下部からリセット
+      if (p.y < 0) p.y = height;
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+
+      ctx.save();
+      ctx.globalAlpha = Math.max(0, Math.min(1, p.alpha));
+      ctx.fillStyle = p.color;
+
+      if (p.isStar) {
+        // 十字星キラキラ
+        drawCrossStar(ctx, p.x, p.y, p.size * 2.2, p.color);
+      } else {
+        // 丸いきらめき粒子
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  function drawCrossStar(ctx, cx, cy, spikes, color) {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(cx - spikes, cy);
+    ctx.lineTo(cx + spikes, cy);
+    ctx.moveTo(cx, cy - spikes);
+    ctx.lineTo(cx, cy + spikes);
+    ctx.stroke();
+
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath();
+    ctx.arc(cx, cy, spikes * 0.3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  animate();
+}
+
+// ========================================================
+// 💖 マウス・タッチ追従キラキラトレイル (Sparkle Trail)
+// ========================================================
+function initMouseSparkles() {
+  const sparkleIcons = ["✨", "💖", "⭐", "💎", "🪐"];
+  let throttle = false;
+
+  function createSparkle(x, y) {
+    if (throttle) return;
+    throttle = true;
+    setTimeout(() => { throttle = false; }, 40);
+
+    const el = document.createElement("span");
+    el.className = "cursor-sparkle";
+    el.innerText = sparkleIcons[Math.floor(Math.random() * sparkleIcons.length)];
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+    document.body.appendChild(el);
+
+    setTimeout(() => {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, 800);
+  }
+
+  window.addEventListener("mousemove", (e) => {
+    createSparkle(e.clientX, e.clientY);
+  });
+
+  window.addEventListener("touchmove", (e) => {
+    if (e.touches && e.touches[0]) {
+      createSparkle(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
 }

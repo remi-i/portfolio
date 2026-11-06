@@ -1,53 +1,59 @@
 @charset "UTF-8";
 
 /* ========================================================
-   Cosmic Gyaru (宇宙×ギャル) ポートフォリオ カスタムスタイル 💖🪐✨
+   デコ宇宙 (Cosmic Deco) ポートフォリオ カスタムスタイル 💎💖🪐✨
    ======================================================== */
 
 :root {
-  --gyaru-pink: #ff1493;
-  --gyaru-hotpink: #ff007f;
-  --gyaru-neoncyan: #00f0ff;
-  --gyaru-purple: #b000ff;
-  --gyaru-gold: #ffe600;
-  --space-black: #08031a;
-  --space-card: rgba(26, 8, 48, 0.85);
+  --deco-pink: #ff2a8d;
+  --deco-hotpink: #ff007f;
+  --deco-softpink: #ff7ebb;
+  --deco-cyan: #00f0ff;
+  --deco-purple: #9d4edd;
+  --deco-gold: #ffd700;
+  --space-dark: #0a041a;
+  --card-bg: rgba(22, 9, 43, 0.85);
 }
 
-/* フォント */
+/* 基本設定 */
 body {
-  font-family: 'M PLUS Rounded 1c', 'Dela Gothic One', sans-serif;
-  background-color: var(--space-black);
-  color: #fff;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-color: var(--space-dark);
+  color: #f8fafc;
   overflow-x: hidden;
 }
 
-/* スムーススクロール */
 html {
   scroll-behavior: smooth;
 }
 
-/* ギャルデコ スクロールバー */
+/* ラインストーン風 スクロールバー */
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: #08031a;
-  border-left: 1px solid #ff007f;
+  background: #0a041a;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ff007f, #b000ff, #00f0ff, #ffe600);
+  background: linear-gradient(180deg, #ff007f, #ffd700, #00f0ff, #ff7ebb);
   border-radius: 9999px;
-  border: 2px solid #08031a;
+  border: 2px solid #0a041a;
   box-shadow: 0 0 10px #ff007f;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ffe600, #ff007f, #00f0ff);
+
+/* パーティクル用 Canvas（全画面固定） */
+#sparkle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* キラキラ宇宙背景 (グリッター＆星) */
-.stars-bg {
+/* 背景グラデーション */
+.cosmic-bg-layer {
   position: fixed;
   top: 0;
   left: 0;
@@ -55,83 +61,105 @@ html {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  background-image: 
-    radial-gradient(2px 2px at 30px 40px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(3px 3px at 80px 120px, #ff007f, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 150px 70px, #00f0ff, rgba(0,0,0,0)),
-    radial-gradient(3px 3px at 220px 200px, #ffe600, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 310px 140px, #b000ff, rgba(0,0,0,0)),
-    radial-gradient(3.5px 3.5px at 390px 290px, #ff1493, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 460px 90px, #00f0ff, rgba(0,0,0,0));
-  background-repeat: repeat;
-  background-size: 450px 450px;
-  opacity: 0.8;
-  animation: gyaru-twinkle 4s ease-in-out infinite alternate;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 42, 141, 0.2), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.18), transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.15), transparent 50%),
+              #0a041a;
 }
 
-@keyframes gyaru-twinkle {
-  0% { opacity: 0.6; filter: hue-rotate(0deg); }
-  50% { opacity: 0.95; filter: hue-rotate(30deg); }
-  100% { opacity: 0.7; filter: hue-rotate(-20deg); }
+/* ぷっくりカワイイ見出しスタイル */
+.cute-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 900;
+  text-shadow: 0 0 15px rgba(255, 42, 141, 0.7), 0 0 30px rgba(255, 0, 127, 0.4);
 }
 
-/* ホログラム / オーロラ アニメーション */
-.hologram-border {
-  background: linear-gradient(90deg, #ff007f, #00f0ff, #ffe600, #b000ff, #ff007f);
-  background-size: 300% 300%;
-  animation: rainbow-flow 3s linear infinite;
+.cute-text-gradient {
+  background: linear-gradient(135deg, #ff7ebb 0%, #ffd700 50%, #00f0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@keyframes rainbow-flow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ギャル文字・ネオングロー */
-.glow-pink {
-  text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 35px #ff1493;
-}
-
-.glow-cyan {
-  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 35px #00f0ff;
-}
-
-.glow-yellow {
-  text-shadow: 0 0 10px #ffe600, 0 0 20px #ffe600, 0 0 35px #ffb700;
-}
-
-/* ギャルカード（ViViViT風 × デコ電・プリクラ調） */
-.work-card {
-  background: rgba(25, 7, 45, 0.85);
-  backdrop-filter: blur(14px);
-  border: 2px solid rgba(255, 0, 127, 0.4);
-  border-radius: 28px;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* 光がサッと走るシャインエフェクト */
+.shine-effect {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(255, 0, 127, 0.25);
+}
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine-sweep 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes shine-sweep {
+  0% { left: -60%; }
+  25% { left: 140%; }
+  100% { left: 140%; }
+}
+
+/* ラインストーン・デコ縁取りカード */
+.work-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 126, 187, 0.4);
+  border-radius: 26px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(255, 42, 141, 0.25);
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 28px;
+  padding: 2px;
+  background: linear-gradient(135deg, #ff2a8d, #ffd700, #00f0ff, #ff7ebb);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .work-card:hover {
-  transform: translateY(-10px) scale(1.03) rotate(-0.5deg);
+  transform: translateY(-8px) scale(1.02);
   border-color: #00f0ff;
-  box-shadow: 0 20px 40px -10px rgba(0, 240, 255, 0.4), 0 0 25px rgba(255, 0, 127, 0.5);
+  box-shadow: 0 20px 40px -10px rgba(0, 240, 255, 0.4), 0 0 25px rgba(255, 42, 141, 0.5);
+}
+
+.work-card:hover::before {
+  opacity: 1;
 }
 
 .work-card .card-thumb img {
-  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .work-card:hover .card-thumb img {
-  transform: scale(1.1) rotate(1deg);
+  transform: scale(1.08);
 }
 
-/* フィルターボタン（デコピル） */
+/* フィルターボタン（デコカプセル） */
 .filter-btn {
-  background: rgba(45, 10, 75, 0.7);
+  background: rgba(35, 14, 65, 0.8);
   backdrop-filter: blur(8px);
-  border: 2px solid rgba(255, 0, 127, 0.4);
+  border: 1.5px solid rgba(255, 126, 187, 0.4);
   color: #fbcfe8;
   font-weight: 800;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -140,31 +168,36 @@ html {
 .filter-btn:hover {
   border-color: #00f0ff;
   color: #fff;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #ff007f 0%, #b000ff 50%, #00f0ff 100%);
-  border-color: #ffe600;
+  background: linear-gradient(135deg, #ff007f 0%, #9d4edd 50%, #00f0ff 100%);
+  border-color: #ffd700;
   color: #ffffff;
-  box-shadow: 0 0 25px rgba(255, 0, 127, 0.7), 0 4px 15px rgba(0, 240, 255, 0.5);
-  transform: translateY(-3px) scale(1.08) rotate(-1deg);
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.6), 0 4px 12px rgba(0, 240, 255, 0.4);
+  transform: translateY(-2px) scale(1.06);
 }
 
-/* プリクラ風スタンプバッジ */
-.purikura-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  font-weight: 900;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #ff007f, #ff71ce);
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-  box-shadow: 0 2px 8px rgba(255, 0, 127, 0.4);
+/* ぷるぷる浮遊アニメーション */
+.float-deco {
+  animation: float-deco 3s ease-in-out infinite;
+}
+
+@keyframes float-deco {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(2deg); }
+}
+
+/* キラキラ回転 */
+.spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* モーダル */
@@ -185,9 +218,9 @@ html {
 }
 
 #modal-container {
-  background: #130424;
-  border: 2px solid #ff007f;
-  box-shadow: 0 0 50px rgba(255, 0, 127, 0.4), 0 0 100px rgba(0, 240, 255, 0.2);
+  background: #120624;
+  border: 2px solid #ff2a8d;
+  box-shadow: 0 0 60px rgba(255, 42, 141, 0.4), 0 0 90px rgba(0, 240, 255, 0.25);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -196,19 +229,19 @@ html {
 }
 
 #work-modal.modal-closed #modal-container {
-  transform: scale(0.9) translateY(20px);
+  transform: scale(0.92) translateY(20px);
 }
 
-/* Swiperボタン（デコ仕様） */
+/* Swiperボタン */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #ffe600 !important;
-  background: rgba(255, 0, 127, 0.85) !important;
+  color: #ffd700 !important;
+  background: rgba(255, 42, 141, 0.85) !important;
   border: 2px solid #00f0ff !important;
-  width: 48px !important;
-  height: 48px !important;
+  width: 44px !important;
+  height: 44px !important;
   border-radius: 50% !important;
-  box-shadow: 0 0 15px rgba(255, 0, 127, 0.7) !important;
+  box-shadow: 0 0 15px rgba(255, 42, 141, 0.7) !important;
   transition: all 0.2s ease !important;
 }
 
@@ -216,33 +249,28 @@ html {
 .swiper-button-prev:hover {
   background: #00f0ff !important;
   color: #ff007f !important;
-  border-color: #ffe600 !important;
-  transform: scale(1.18) rotate(10deg);
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.9) !important;
+  border-color: #ffd700 !important;
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.8) !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: linear-gradient(90deg, #ff007f, #ffe600, #00f0ff) !important;
-  width: 32px !important;
+  background: linear-gradient(90deg, #ff007f, #ffd700, #00f0ff) !important;
+  width: 30px !important;
   border-radius: 9999px !important;
   box-shadow: 0 0 12px #ff007f;
 }
 
-/* ギャル浮遊アニメーション */
-.gyaru-bounce {
-  animation: gyaru-bounce 2s ease-in-out infinite;
+/* マウストレイルのキラキラ（JavaScript生成用） */
+.cursor-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 16px;
+  animation: sparkle-fade 0.8s forwards ease-out;
 }
 
-@keyframes gyaru-bounce {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(3deg); }
-}
-
-.gyaru-spin {
-  animation: gyaru-spin 6s linear infinite;
-}
-
-@keyframes gyaru-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes sparkle-fade {
+  0% { transform: translate(-50%, -50%) scale(1.2) rotate(0deg); opacity: 1; }
+  100% { transform: translate(-50%, -50%) translateY(20px) scale(0) rotate(90deg); opacity: 0; }
 }

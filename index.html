@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💖🪐 宇宙最強ギャルエンジニアの爆盛れポートフォリオ 💫✨</title>
-  <meta name="description" content="宇宙×ギャル！HTML/CSS/JavaScriptで爆盛れUIを実装するギャルエンジニアのViViViT風ポートフォリオサイト🌺🪐💖" />
+  <title>💎💖 Cosmic Deco Portfolio ✨🪐 | Frontend &amp; UI Design</title>
+  <meta name="description" content="宇宙×デコ！キラキラあふれるViViViT風ギャラリーと、確かな技術力・設計思考で魅せるフロントエンドエンジニアのポートフォリオサイト。" />
 
-  <!-- Google Fonts (丸文字 & インパクトフォント) -->
+  <!-- Google Fonts (丸みのある極太かわいいフォント & 読みやすい本文) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Outfit:wght@700;800;900&family=Shrikhand&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Outfit:wght@700;800;900&family=Shrikhand&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,18 +19,19 @@
         extend: {
           fontFamily: {
             sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
-            impact: ['"Dela Gothic One"', '"M PLUS Rounded 1c"', 'sans-serif'],
+            cute: ['"M PLUS Rounded 1c"', 'sans-serif'],
             logo: ['Shrikhand', '"M PLUS Rounded 1c"', 'cursive'],
           },
           colors: {
-            gyaru: {
-              pink: '#ff1493',
+            deco: {
+              pink: '#ff2a8d',
               hotpink: '#ff007f',
+              softpink: '#ff7ebb',
               cyan: '#00f0ff',
-              purple: '#b000ff',
-              gold: '#ffe600',
-              black: '#08031a',
-              dark: '#140526',
+              purple: '#9d4edd',
+              gold: '#ffd700',
+              dark: '#120624',
+              black: '#0a041a',
             }
           }
         }
@@ -44,86 +45,90 @@
   <!-- Swiper.js CDN (CSS) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- Custom Cosmic Gyaru Styles -->
+  <!-- Custom Deco Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="selection:bg-gyaru-hotpink selection:text-white">
+<body class="selection:bg-deco-hotpink selection:text-white">
 
-  <!-- キラキラ星空背景 -->
-  <div class="stars-bg"></div>
+  <!-- 背景レイヤー & キラキラCanvasアニメーション -->
+  <div class="cosmic-bg-layer"></div>
+  <canvas id="sparkle-canvas"></canvas>
 
   <!-- ========================================================
-       ヘッダー (デコ電風キラキラナビ)
+       ヘッダー (デコレーション＆キラキラナビ)
        ======================================================== -->
-  <header class="sticky top-0 z-40 bg-gyaru-black/85 backdrop-blur-md border-b-2 border-gyaru-hotpink/50 transition-all">
+  <header class="sticky top-0 z-40 bg-deco-black/85 backdrop-blur-md border-b-2 border-deco-pink/40 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
       
-      <!-- ロゴ -->
+      <!-- ロゴ (デコ盛り) -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-gyaru-hotpink via-gyaru-purple to-gyaru-cyan flex items-center justify-center text-white text-xl shadow-lg shadow-gyaru-hotpink/50 group-hover:rotate-12 transition-transform duration-300 border-2 border-gyaru-gold gyaru-bounce">
-          💖
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-deco-hotpink via-deco-purple to-deco-cyan flex items-center justify-center text-white text-xl shadow-[0_0_15px_rgba(255,42,141,0.6)] group-hover:rotate-12 transition-transform duration-300 border-2 border-deco-gold float-deco">
+          💎
         </div>
         <div>
-          <span class="font-logo text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-gyaru-hotpink via-gyaru-gold to-gyaru-cyan tracking-wider drop-shadow-[0_0_8px_rgba(255,0,127,0.8)]">
-            GAL×SPACE.PORTFOLIO
-          </span>
-          <span class="block text-[11px] text-pink-300 font-extrabold tracking-widest -mt-1 font-sans">
-            🪐 爆盛れフロントエンドエンジニア見参🌺✨
+          <div class="flex items-center gap-1.5">
+            <span class="font-logo text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-deco-softpink via-deco-gold to-deco-cyan tracking-wider drop-shadow-[0_0_10px_rgba(255,0,127,0.8)]">
+              COSMIC.DECO
+            </span>
+            <span class="text-sm animate-pulse">✨💖</span>
+          </div>
+          <span class="block text-[11px] text-pink-300 font-extrabold tracking-wider -mt-1">
+            🪐 Frontend Engineer &amp; UI/UX Designer
           </span>
         </div>
       </a>
 
       <!-- デスクトップ ナビゲーション -->
       <nav class="hidden md:flex items-center gap-6 text-sm font-black text-pink-100">
-        <a href="#works" class="hover:text-gyaru-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-gyaru-hotpink/20">
-          💅 爆盛れWorks
+        <a href="#works" class="hover:text-deco-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-deco-pink/20">
+          <span>💅</span> 作品ギャラリー (Works)
         </a>
-        <a href="#about" class="hover:text-gyaru-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-gyaru-hotpink/20">
-          💖 ウチのこと (About)
+        <a href="#about" class="hover:text-deco-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-deco-pink/20">
+          <span>💖</span> プロフィール (About)
         </a>
-        <a href="#skills" class="hover:text-gyaru-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-gyaru-hotpink/20">
-          ⚡️ 無敵スキル (Skills)
+        <a href="#skills" class="hover:text-deco-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-deco-pink/20">
+          <span>⚡️</span> スキルセット (Skills)
         </a>
-        <a href="#contact" class="hover:text-gyaru-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-gyaru-hotpink/20">
-          💌 連絡ちょーだい！
+        <a href="#contact" class="hover:text-deco-cyan transition-colors flex items-center gap-1.5 py-1.5 px-3.5 rounded-full hover:bg-deco-pink/20">
+          <span>💌</span> お問い合わせ (Contact)
         </a>
       </nav>
 
       <!-- 右側アクション -->
       <div class="hidden md:flex items-center gap-3">
-        <a href="https://github.com/remi-i/portfolio" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gyaru-dark border-2 border-gyaru-hotpink flex items-center justify-center text-white hover:text-gyaru-cyan hover:border-gyaru-cyan transition-all text-base hover:scale-110 shadow-[0_0_12px_rgba(255,0,127,0.5)]" title="GitHub">
+        <a href="https://github.com/remi-i/portfolio" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-deco-dark border-2 border-deco-pink flex items-center justify-center text-white hover:text-deco-cyan hover:border-deco-cyan transition-all text-base hover:scale-110 shadow-[0_0_12px_rgba(255,42,141,0.5)]" title="GitHub">
           <i class="fa-brands fa-github"></i>
         </a>
-        <a href="#contact" class="px-5 py-2.5 text-xs font-black text-white bg-gradient-to-r from-gyaru-hotpink via-gyaru-purple to-gyaru-cyan rounded-full border-2 border-gyaru-gold shadow-[0_0_18px_rgba(255,0,127,0.6)] hover:scale-105 transition-all flex items-center gap-1.5">
-          <span>DM飛ばす📲💖</span>
+        <a href="#contact" class="shine-effect px-5 py-2.5 text-xs font-black text-white bg-gradient-to-r from-deco-hotpink via-deco-purple to-deco-cyan rounded-full border-2 border-deco-gold shadow-[0_0_20px_rgba(255,42,141,0.6)] hover:scale-105 transition-all flex items-center gap-1.5">
+          <span>交信・お問い合わせ 📲✨</span>
         </a>
       </div>
 
       <!-- モバイルメニューボタン -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gyaru-hotpink hover:text-gyaru-cyan focus:outline-hidden text-2xl" aria-label="メニューを開く">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-deco-pink hover:text-deco-cyan focus:outline-hidden text-2xl" aria-label="メニューを開く">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
     <!-- モバイルメニュー -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gyaru-black/95 border-b-2 border-gyaru-hotpink px-4 pt-3 pb-5 space-y-2.5 backdrop-blur-2xl">
-      <a href="#works" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-gyaru-hotpink/30 flex items-center gap-2">
-        💅 爆盛れWorks一覧
+    <div id="mobile-menu" class="hidden md:hidden bg-deco-black/95 border-b-2 border-deco-pink px-4 pt-3 pb-5 space-y-2.5 backdrop-blur-2xl">
+      <a href="#works" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-deco-pink/30 flex items-center gap-2">
+        <span>💅</span> 作品ギャラリー (Works)
       </a>
-      <a href="#about" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-gyaru-hotpink/30 flex items-center gap-2">
-        💖 ウチのこと (About Me)
+      <a href="#about" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-deco-pink/30 flex items-center gap-2">
+        <span>💖</span> プロフィール (About)
       </a>
-      <a href="#skills" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-gyaru-hotpink/30 flex items-center gap-2">
-        ⚡️ ギャルの無敵スキル (Skills)
+      <a href="#skills" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-deco-pink/30 flex items-center gap-2">
+        <span>⚡️</span> スキルセット (Skills)
       </a>
-      <a href="#contact" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-gyaru-hotpink/30 flex items-center gap-2">
-        💌 連絡ちょーだい！（Contact）
+      <a href="#contact" class="mobile-menu-link block px-4 py-3 rounded-2xl text-sm font-black text-white hover:bg-deco-pink/30 flex items-center gap-2">
+        <span>💌</span> お問い合わせ (Contact)
       </a>
     </div>
   </header>
 
   <!-- ========================================================
-       ヒーローセクション (宇宙×ギャル 爆誕)
+       ヒーローセクション (かわいいデコ見出し × まじめな解説)
        ======================================================== -->
   <section class="relative z-10 pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,62 +138,63 @@
         <!-- 左側キャッチコピー -->
         <div class="max-w-2xl text-center lg:text-left space-y-6">
           
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gyaru-hotpink/20 border-2 border-gyaru-hotpink text-pink-200 text-xs font-black shadow-[0_0_15px_rgba(255,0,127,0.5)]">
-            <span class="text-base">🌺</span>
-            <span>宇宙イチ盛れるUI作ってるギャルエンジニア見参✌️✨</span>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-deco-pink/20 border-2 border-deco-pink text-pink-200 text-xs font-black shadow-[0_0_15px_rgba(255,42,141,0.5)]">
+            <span class="text-base animate-spin" style="animation-duration: 6s;">🪐</span>
+            <span>Frontend Engineer &amp; UI/UX Designer Portfolio 💎✨</span>
           </div>
 
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight font-sans">
-            見栄えもコードも<br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gyaru-hotpink via-gyaru-gold to-gyaru-cyan glow-pink font-impact">
-              爆アゲ最上級⤴⤴
-            </span>な<br />Web体験つくるし〜💖🪐
+          <!-- かわいいデコ大見出し -->
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight cute-title">
+            心ときめくデザインと、<br />
+            <span class="cute-text-gradient">
+              緻密で心地よいUI体験
+            </span>を実装する💖🪐
           </h1>
 
-          <p class="text-pink-100 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 font-bold">
-            「Planet Cafe」マジ神UIすぎて宇宙飛び立つレベル🚀💫<br />
-            HTML/CSS/JSでミリ単位までこだわった爆盛れフロントエンド実装と、Figmaでの神UI設計！
-            ただ可愛いだけじゃない、コンポーネント設計＆ユーザビリティガチ勢なギャルです💅✨
+          <!-- まじめで論理的な解説文 -->
+          <p class="text-slate-200 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+            HTML5 / CSS3 / JavaScriptを活用したセマンティックで保守性の高いフロントエンドコーディングと、Figmaによる直感的なUI/UX設計を行っています。
+            飲食店のテーブルオーダーシステム「Planet Cafe」のように、企画・ポジショニング分析からコンポーネント実装まで一貫して手掛けます。
           </p>
 
-          <!-- ギャルピル -->
+          <!-- デコタグピル -->
           <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs font-black">
-            <span class="px-3.5 py-1.5 rounded-full bg-gyaru-hotpink/30 border border-gyaru-hotpink text-white shadow-xs">
-              💻 HTML/CSS/JS ガチ勢
+            <span class="px-3.5 py-1.5 rounded-full bg-deco-pink/30 border border-deco-pink text-white shadow-xs flex items-center gap-1.5">
+              <span>💻</span> HTML / CSS / JavaScript
             </span>
-            <span class="px-3.5 py-1.5 rounded-full bg-gyaru-cyan/20 border border-gyaru-cyan text-gyaru-cyan shadow-xs">
-              🎨 Figma UI/UX 爆盛れ
+            <span class="px-3.5 py-1.5 rounded-full bg-deco-cyan/20 border border-deco-cyan text-deco-cyan shadow-xs flex items-center gap-1.5">
+              <span>🎨</span> Figma UI/UX 設計
             </span>
-            <span class="px-3.5 py-1.5 rounded-full bg-gyaru-gold/20 border border-gyaru-gold text-gyaru-gold shadow-xs">
-              📱 スマホもPCも超快適
+            <span class="px-3.5 py-1.5 rounded-full bg-deco-gold/20 border border-deco-gold text-deco-gold shadow-xs flex items-center gap-1.5">
+              <span>📱</span> スマホ・PC完全対応
             </span>
-            <span class="px-3.5 py-1.5 rounded-full bg-gyaru-purple/30 border border-gyaru-purple text-pink-200 shadow-xs">
-              🚀 ゼロビルドCDN即納
+            <span class="px-3.5 py-1.5 rounded-full bg-deco-purple/30 border border-deco-purple text-pink-200 shadow-xs flex items-center gap-1.5">
+              <span>🚀</span> ゼロビルドCDN設計
             </span>
           </div>
         </div>
 
-        <!-- 右側：看板作品「Planet Cafe」デコカード -->
-        <div class="w-full max-w-md shrink-0 cursor-pointer gyaru-bounce" onclick="openWorkModal('planet-cafe')">
-          <div class="relative p-1.5 rounded-[32px] hologram-border shadow-[0_0_35px_rgba(255,0,127,0.6)] group">
+        <!-- 右側：看板作品「Planet Cafe」ラインストーンデコカード -->
+        <div class="w-full max-w-md shrink-0 cursor-pointer float-deco" onclick="openWorkModal('planet-cafe')">
+          <div class="relative p-1.5 rounded-[32px] bg-gradient-to-tr from-deco-hotpink via-deco-purple to-deco-cyan shadow-[0_0_35px_rgba(255,42,141,0.6)] group">
             
-            <div class="bg-gyaru-dark rounded-[28px] p-4 text-white border-2 border-gyaru-hotpink">
+            <div class="bg-deco-dark rounded-[28px] p-4 text-white border-2 border-deco-pink">
               
               <div class="flex items-center justify-between mb-3 px-1">
-                <span class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-gradient-to-r from-gyaru-hotpink to-gyaru-purple text-white shadow-md border border-gyaru-gold">
-                  👑 宇宙イチ推し作品！
+                <span class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider px-3.5 py-1 rounded-full bg-gradient-to-r from-deco-hotpink to-deco-purple text-white shadow-md border border-deco-gold">
+                  👑 PICKUP WORK ✨
                 </span>
-                <span class="text-xs text-gyaru-gold font-bold flex items-center gap-1">
-                  👀 タップして見る💖
+                <span class="text-xs text-deco-gold font-bold flex items-center gap-1">
+                  詳細を見る 🔍💖
                 </span>
               </div>
 
               <!-- サムネイル画像 -->
-              <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-black border border-gyaru-cyan/40">
+              <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-black border border-deco-cyan/40">
                 <img src="assets/images/planet-cafe/main.jpg" alt="Planet Cafe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-gyaru-black via-transparent to-transparent flex items-end p-4">
+                <div class="absolute inset-0 bg-gradient-to-t from-deco-black via-transparent to-transparent flex items-end p-4">
                   <div>
-                    <span class="text-[10px] font-black text-gyaru-cyan uppercase tracking-widest block mb-0.5">🪐 TABLE ORDER SYSTEM</span>
+                    <span class="text-[10px] font-black text-deco-cyan uppercase tracking-widest block mb-0.5">🪐 TABLE ORDER SYSTEM</span>
                     <h3 class="font-black text-base sm:text-lg text-white">Planet Cafe 宇宙カフェUI</h3>
                   </div>
                 </div>
@@ -196,11 +202,11 @@
 
               <div class="mt-3.5 px-1 flex items-center justify-between text-xs">
                 <div class="flex gap-2">
-                  <span class="px-2.5 py-1 rounded-lg bg-gyaru-hotpink/20 border border-gyaru-hotpink text-pink-300 font-bold text-[11px]">#飲食オーダー</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-gyaru-cyan/20 border border-gyaru-cyan text-cyan-300 font-bold text-[11px]">#ネオンサイバー</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-deco-pink/20 border border-deco-pink text-pink-300 font-bold text-[11px]">#飲食店オーダー</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-deco-cyan/20 border border-deco-cyan text-cyan-300 font-bold text-[11px]">#ネオンサイバー</span>
                 </div>
-                <span class="text-gyaru-cyan font-black group-hover:translate-x-1.5 transition-transform flex items-center gap-1">
-                  CHECK <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                <span class="text-deco-cyan font-black group-hover:translate-x-1.5 transition-transform flex items-center gap-1">
+                  VIEW <i class="fa-solid fa-arrow-right text-[11px]"></i>
                 </span>
               </div>
 
@@ -215,33 +221,33 @@
   </section>
 
   <!-- ========================================================
-       作品ギャラリー (ViViViT風 ギャルデコグリッド)
+       作品ギャラリー (ViViViT風 デコカードグリッド)
        ======================================================== -->
   <main id="works" class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
     
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-b-2 border-gyaru-hotpink/40 pb-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-b-2 border-deco-pink/40 pb-6">
       <div>
-        <div class="inline-flex items-center gap-2 text-xs font-black text-gyaru-hotpink uppercase tracking-widest mb-1.5">
-          <span>🌺</span> GAL WORKS COLLECTION
+        <div class="inline-flex items-center gap-2 text-xs font-black text-deco-hotpink uppercase tracking-widest mb-1.5">
+          <span>✨</span> WORKS GALLERY
         </div>
-        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-          爆盛れ作品たち 💅🪐✨
+        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight cute-title">
+          制作実績・作品一覧 🪐💎✨
         </h2>
-        <p class="text-xs sm:text-sm text-pink-200 mt-2 font-bold">
-          画像タップでスライダー＆UIのこだわりポイント（マジ神解説）が開くよ〜！
+        <p class="text-xs sm:text-sm text-slate-300 mt-2 font-medium">
+          各カードをクリックすると、詳細な画面画像スライダーやUI設計の意図をご覧いただけます。
         </p>
       </div>
 
-      <!-- ギャル風フィルター -->
+      <!-- デコフィルターボタン -->
       <div class="flex flex-wrap items-center gap-2.5">
         <button class="filter-btn active px-4 py-2 rounded-full text-xs font-black cursor-pointer" data-filter="all">
-          💖 ぜんぶ！ (All)
+          💖 すべて (All)
         </button>
         <button class="filter-btn px-4 py-2 rounded-full text-xs font-black cursor-pointer" data-filter="frontend">
           🚀 フロントエンド
         </button>
         <button class="filter-btn px-4 py-2 rounded-full text-xs font-black cursor-pointer" data-filter="ui-ux">
-          🎨 UI/UXデザイン
+          🎨 UI/UX デザイン
         </button>
         <button class="filter-btn px-4 py-2 rounded-full text-xs font-black cursor-pointer" data-filter="webapp">
           💻 Webアプリ
@@ -262,61 +268,59 @@
   <!-- ========================================================
        自己紹介 (About) セクション
        ======================================================== -->
-  <section id="about" class="relative z-10 py-16 sm:py-24 bg-gyaru-black/80 border-t-2 border-gyaru-hotpink/40 backdrop-blur-md">
+  <section id="about" class="relative z-10 py-16 sm:py-24 bg-deco-black/80 border-t-2 border-deco-pink/40 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <!-- 左側：ギャルアバター -->
+        <!-- 左側：アバタービジュアル -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-64 h-64 sm:w-80 sm:h-80">
-            <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-gyaru-hotpink via-gyaru-purple to-gyaru-cyan rotate-6 opacity-60 blur-xl animate-pulse"></div>
+            <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-deco-hotpink via-deco-purple to-deco-cyan rotate-6 opacity-60 blur-xl animate-pulse"></div>
             
-            <div class="relative w-full h-full rounded-3xl bg-gyaru-dark border-2 border-gyaru-hotpink p-6 flex flex-col items-center justify-center text-center backdrop-blur-2xl shadow-[0_0_35px_rgba(255,0,127,0.5)]">
-              <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-gyaru-hotpink to-gyaru-cyan p-1 flex items-center justify-center mb-3.5 shadow-lg border-2 border-gyaru-gold gyaru-bounce text-4xl">
-                ✌️🌺
+            <div class="relative w-full h-full rounded-3xl bg-deco-dark border-2 border-deco-pink p-6 flex flex-col items-center justify-center text-center backdrop-blur-2xl shadow-[0_0_35px_rgba(255,42,141,0.5)]">
+              <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-deco-hotpink to-deco-cyan p-1 flex items-center justify-center mb-3.5 shadow-lg border-2 border-deco-gold float-deco text-4xl">
+                👩‍💻✨
               </div>
-              <h3 class="text-xl sm:text-2xl font-black text-white font-impact tracking-wide">Cosmic Gyaru Engineer</h3>
-              <p class="text-xs text-gyaru-gold mt-1 font-bold">#見た目ギャル中身ガチエンジニア</p>
+              <h3 class="text-xl sm:text-2xl font-black text-white cute-title tracking-wide">Frontend Engineer</h3>
+              <p class="text-xs text-deco-gold mt-1 font-bold">#UI/UX Designer &amp; Developer</p>
               
               <div class="mt-4 flex flex-wrap justify-center gap-2">
-                <span class="purikura-badge">💖 超即戦力</span>
-                <span class="purikura-badge">🪐 宇宙規模</span>
-                <span class="purikura-badge">⚡️ 爆速実装</span>
+                <span class="text-[11px] font-black px-3 py-1 rounded-full bg-deco-pink text-white shadow-xs">💖 End-to-End</span>
+                <span class="text-[11px] font-black px-3 py-1 rounded-full bg-deco-cyan text-deco-black shadow-xs">🪐 Clean Code</span>
+                <span class="text-[11px] font-black px-3 py-1 rounded-full bg-deco-gold text-deco-black shadow-xs">⚡️ High UX</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 右側：ストーリー -->
+        <!-- 右側：自己紹介テキスト (まじめで丁寧) -->
         <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 text-xs font-black text-gyaru-cyan uppercase tracking-widest">
-            <span>✨</span> WHO AM I ?
+          <div class="inline-flex items-center gap-2 text-xs font-black text-deco-cyan uppercase tracking-widest">
+            <span>✨</span> ABOUT ME
           </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
-            「カワイイ」と「使いやすさ」は<br class="hidden sm:inline" />
-            妥協ナシで両立すんのがウチの流儀✌️💖
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug cute-title">
+            直感的な操作性と世界観を両立する、<br class="hidden sm:inline" />
+            高品質なフロントエンド開発
           </h2>
-          <p class="text-pink-100 text-sm sm:text-base leading-relaxed font-bold">
-            「Planet Cafe」みたいに、ただコードを書くだけじゃなくて、ポジショニングマップで「暖かい/クール」「ファンタジー/サイバー」の4象限から世界観をガチ分析！
-            FigmaでUIコンポーネントを設計して、HTML/CSS/JavaScriptで崩れない強固なコードに落とし込むのが超得意です🌺✨
+          <p class="text-slate-200 text-sm sm:text-base leading-relaxed font-medium">
+            看板作品である「Planet Cafe」をはじめ、企画・ポジショニング分析による世界観の策定から、FigmaでのUIパーツ・画面遷移のプロトタイピング、そしてHTML5/CSS3/JavaScriptによるセマンティックなコーディングまでを一貫して手掛けられることが私の強みです。
           </p>
-          <p class="text-pink-100 text-sm sm:text-base leading-relaxed font-bold">
-            スクロールバーの視認性で「メニューが下に続いてるよ！」ってユーザーを自然に誘導したり、カードコンポーネント化でメニュー追加も楽勝にする設計思考…
-            気配りMAXな神UIを爆速で届けます🪐💨
+          <p class="text-slate-200 text-sm sm:text-base leading-relaxed font-medium">
+            「スクロールバーの視認性を高めて次の操作を自然に誘導する設計」や、「メニューをカードコンポーネント化して将来の品目追加を容易にする設計」など、ユーザーの利便性と保守性の両面を重視した丁寧なものづくりを徹底しています。
           </p>
 
           <div class="pt-3 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="p-4 rounded-2xl bg-gyaru-dark border-2 border-gyaru-hotpink text-center shadow-md">
-              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-gyaru-hotpink to-gyaru-gold font-black text-2xl font-impact">100%</span>
-              <span class="text-xs text-pink-200 font-bold">スマホもPCも爆盛れ</span>
+            <div class="p-4 rounded-2xl bg-deco-dark border-2 border-deco-pink text-center shadow-md">
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-deco-hotpink to-deco-gold font-black text-2xl font-sans">100%</span>
+              <span class="text-xs text-pink-200 font-bold">レスポンシブ完全対応</span>
             </div>
-            <div class="p-4 rounded-2xl bg-gyaru-dark border-2 border-gyaru-cyan text-center shadow-md">
-              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-gyaru-cyan to-gyaru-purple font-black text-2xl font-impact">Zero</span>
-              <span class="text-xs text-cyan-200 font-bold">ビルドなしCDN神速</span>
+            <div class="p-4 rounded-2xl bg-deco-dark border-2 border-deco-cyan text-center shadow-md">
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-deco-cyan to-deco-purple font-black text-2xl font-sans">Zero</span>
+              <span class="text-xs text-cyan-200 font-bold">ビルド不要・CDN配信</span>
             </div>
-            <div class="p-4 rounded-2xl bg-gyaru-dark border-2 border-gyaru-gold text-center shadow-md col-span-2 sm:col-span-1">
-              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-gyaru-gold to-gyaru-hotpink font-black text-2xl font-impact">End-to-End</span>
+            <div class="p-4 rounded-2xl bg-deco-dark border-2 border-deco-gold text-center shadow-md col-span-2 sm:col-span-1">
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-deco-gold to-deco-hotpink font-black text-2xl font-sans">End-to-End</span>
               <span class="text-xs text-yellow-200 font-bold">企画〜デザイン〜実装</span>
             </div>
           </div>
@@ -330,106 +334,106 @@
   <!-- ========================================================
        スキルスタック (Skills) セクション
        ======================================================== -->
-  <section id="skills" class="relative z-10 py-16 sm:py-24 border-t-2 border-gyaru-hotpink/40">
+  <section id="skills" class="relative z-10 py-16 sm:py-24 border-t-2 border-deco-pink/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-1.5 text-xs font-black text-gyaru-gold uppercase tracking-widest mb-1.5">
-          <span>⚡️</span> GAL POWER &amp; TECH
+        <div class="inline-flex items-center gap-1.5 text-xs font-black text-deco-gold uppercase tracking-widest mb-1.5">
+          <span>⚡️</span> TECHNICAL SKILLS
         </div>
-        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-          ギャルの無敵スキル一覧 🪐💅
+        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight cute-title">
+          スキルセット &amp; 開発環境 🪐✨
         </h2>
-        <p class="text-xs sm:text-sm text-pink-200 mt-2 font-bold">
-          テンションだけじゃない！現場で役立つ確かな技術スタック
+        <p class="text-xs sm:text-sm text-slate-300 mt-2 font-medium">
+          実務に直結するフロントエンド技術とUIデザインツール
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         
-        <!-- フロントエンド -->
-        <div class="p-7 rounded-3xl bg-gyaru-dark/90 border-2 border-gyaru-cyan backdrop-blur-md space-y-4 hover:border-gyaru-gold transition-colors shadow-[0_0_20px_rgba(0,240,255,0.3)]">
-          <div class="w-13 h-13 rounded-2xl bg-gyaru-cyan/20 text-gyaru-cyan flex items-center justify-center text-2xl border-2 border-gyaru-cyan shadow-sm">
-            💻
+        <!-- フロントエンド開発 -->
+        <div class="p-7 rounded-3xl bg-deco-dark/90 border-2 border-deco-cyan backdrop-blur-md space-y-4 hover:border-deco-gold transition-colors shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+          <div class="w-13 h-13 rounded-2xl bg-deco-cyan/20 text-deco-cyan flex items-center justify-center text-2xl border-2 border-deco-cyan shadow-sm">
+            <i class="fa-solid fa-code"></i>
           </div>
-          <h3 class="text-lg font-black text-white font-impact tracking-wide">Frontend Development</h3>
-          <p class="text-xs text-pink-100 leading-relaxed font-bold">
-            セマンティックなHTML、崩れないレスポンシブCSS、動的計算をサクサク動かすJavaScript！
+          <h3 class="text-lg font-black text-white cute-title tracking-wide">Frontend Development</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-medium">
+            セマンティックなHTML、柔軟で崩れないCSS設計、動的処理を実現するJavaScript。
           </p>
-          <div class="space-y-3 pt-2 border-t border-gyaru-cyan/30">
+          <div class="space-y-3 pt-2 border-t border-deco-cyan/30">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">HTML5 / セマンティック</span>
-              <span class="text-gyaru-cyan font-black">神レベル ✨</span>
+              <span class="font-bold text-white">HTML5 / セマンティックマークアップ</span>
+              <span class="text-deco-cyan font-black">Expert ✨</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">CSS3 / Flex / Grid / Animation</span>
-              <span class="text-gyaru-cyan font-black">神レベル ✨</span>
+              <span class="font-bold text-white">CSS3 / Flexbox / Grid / Animation</span>
+              <span class="text-deco-cyan font-black">Expert ✨</span>
             </div>
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-white">JavaScript (ES6+) / DOM動的処理</span>
-              <span class="text-gyaru-gold font-black">無敵 🚀</span>
+              <span class="text-deco-gold font-black">Advanced 🚀</span>
             </div>
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-white">Tailwind CSS / CDN活用</span>
-              <span class="text-gyaru-gold font-black">無敵 🚀</span>
+              <span class="text-deco-gold font-black">Advanced 🚀</span>
             </div>
           </div>
         </div>
 
         <!-- UI/UXデザイン -->
-        <div class="p-7 rounded-3xl bg-gyaru-dark/90 border-2 border-gyaru-hotpink backdrop-blur-md space-y-4 hover:border-gyaru-gold transition-colors shadow-[0_0_20px_rgba(255,0,127,0.3)]">
-          <div class="w-13 h-13 rounded-2xl bg-gyaru-hotpink/20 text-gyaru-hotpink flex items-center justify-center text-2xl border-2 border-gyaru-hotpink shadow-sm">
-            🎨
+        <div class="p-7 rounded-3xl bg-deco-dark/90 border-2 border-deco-pink backdrop-blur-md space-y-4 hover:border-deco-gold transition-colors shadow-[0_0_20px_rgba(255,42,141,0.3)]">
+          <div class="w-13 h-13 rounded-2xl bg-deco-pink/20 text-deco-pink flex items-center justify-center text-2xl border-2 border-deco-pink shadow-sm">
+            <i class="fa-brands fa-figma"></i>
           </div>
-          <h3 class="text-lg font-black text-white font-impact tracking-wide">UI / UX Design</h3>
-          <p class="text-xs text-pink-100 leading-relaxed font-bold">
-            ユーザー視点の導線設計、ポジショニングマップ分析、Figmaでのコンポーネント化！
+          <h3 class="text-lg font-black text-white cute-title tracking-wide">UI / UX Design</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-medium">
+            利用シーンやユーザー心理を意識した情報設計、ポジショニングマップ分析、プロトタイピング。
           </p>
-          <div class="space-y-3 pt-2 border-t border-gyaru-hotpink/30">
+          <div class="space-y-3 pt-2 border-t border-deco-pink/30">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">Figma (Auto Layout &amp; Components)</span>
-              <span class="text-gyaru-hotpink font-black">爆盛れ 💅</span>
+              <span class="font-bold text-white">Figma (コンポーネント / Auto Layout)</span>
+              <span class="text-deco-pink font-black">Advanced 🎨</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">ポジショニングマップ / 世界観定義</span>
-              <span class="text-gyaru-hotpink font-black">爆盛れ 💅</span>
+              <span class="font-bold text-white">デザインリサーチ / ポジショニング分析</span>
+              <span class="text-deco-pink font-black">Advanced 🎨</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">画面遷移・プロトタイピング</span>
-              <span class="text-gyaru-hotpink font-black">爆盛れ 💅</span>
+              <span class="font-bold text-white">ワイヤーフレーム / 画面遷移設計</span>
+              <span class="text-deco-pink font-black">Advanced 🎨</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">完全レスポンシブ設計</span>
-              <span class="text-gyaru-gold font-black">神レベル ✨</span>
+              <span class="font-bold text-white">完全レスポンシブ設計 (スマホ &amp; PC)</span>
+              <span class="text-deco-gold font-black">Expert ✨</span>
             </div>
           </div>
         </div>
 
         <!-- ツール & 運用 -->
-        <div class="p-7 rounded-3xl bg-gyaru-dark/90 border-2 border-gyaru-purple backdrop-blur-md space-y-4 hover:border-gyaru-gold transition-colors shadow-[0_0_20px_rgba(176,0,255,0.3)]">
-          <div class="w-13 h-13 rounded-2xl bg-gyaru-purple/20 text-pink-300 flex items-center justify-center text-2xl border-2 border-gyaru-purple shadow-sm">
-            ⚡️
+        <div class="p-7 rounded-3xl bg-deco-dark/90 border-2 border-deco-purple backdrop-blur-md space-y-4 hover:border-deco-gold transition-colors shadow-[0_0_20px_rgba(157,78,221,0.3)]">
+          <div class="w-13 h-13 rounded-2xl bg-deco-purple/20 text-pink-300 flex items-center justify-center text-2xl border-2 border-deco-purple shadow-sm">
+            <i class="fa-solid fa-toolbox"></i>
           </div>
-          <h3 class="text-lg font-black text-white font-impact tracking-wide">Tools &amp; Speed</h3>
-          <p class="text-xs text-pink-100 leading-relaxed font-bold">
-            バージョン管理から即時デプロイ、DevToolsでの徹底検証までストレスゼロ！
+          <h3 class="text-lg font-black text-white cute-title tracking-wide">Tools &amp; Workflow</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-medium">
+            スムーズな開発と品質担保のためのツール選定、バージョン管理、パフォーマンス最適化。
           </p>
-          <div class="space-y-3 pt-2 border-t border-gyaru-purple/30">
+          <div class="space-y-3 pt-2 border-t border-deco-purple/30">
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-white">Git / GitHub / GitHub Pages</span>
-              <span class="text-pink-300 font-black">余裕 🪐</span>
+              <span class="text-pink-300 font-black">Advanced 🪐</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">Chrome DevTools (検証・最適化)</span>
-              <span class="text-gyaru-gold font-black">神レベル ✨</span>
+              <span class="font-bold text-white">Chrome DevTools (検証 / デバッグ)</span>
+              <span class="text-deco-gold font-black">Expert ✨</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-white">Swiper.js スライダー実装</span>
-              <span class="text-gyaru-gold font-black">神レベル ✨</span>
+              <span class="font-bold text-white">Swiper.js / カルーセル実装</span>
+              <span class="text-deco-gold font-black">Expert ✨</span>
             </div>
             <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-white">ゼロビルドCDN高速化</span>
-              <span class="text-pink-300 font-black">余裕 🪐</span>
+              <span class="text-pink-300 font-black">Advanced 🪐</span>
             </div>
           </div>
         </div>
@@ -442,34 +446,34 @@
   <!-- ========================================================
        コンタクト (Contact) セクション
        ======================================================== -->
-  <section id="contact" class="relative z-10 py-16 sm:py-24 bg-gyaru-black/90 border-t-2 border-gyaru-hotpink/40">
+  <section id="contact" class="relative z-10 py-16 sm:py-24 bg-deco-black/90 border-t-2 border-deco-pink/40">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-1.5 text-xs font-black text-gyaru-cyan uppercase tracking-widest mb-1.5">
+      <div class="inline-flex items-center gap-1.5 text-xs font-black text-deco-cyan uppercase tracking-widest mb-1.5">
         <span>💌</span> CONTACT WAVE
       </div>
-      <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-        連絡ちょーだい！待ってるよ〜📲💖
+      <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight cute-title">
+        お問い合わせ・メッセージ 📬✨
       </h2>
-      <p class="text-xs sm:text-sm text-pink-200 mt-2 mb-8 font-bold">
-        採用や案件の相談、UIの感想とか何でも気軽に送ってね！爆速で返信するし〜🤙🌺
+      <p class="text-xs sm:text-sm text-slate-300 mt-2 mb-8 font-medium">
+        制作や採用に関するご相談、作品へのご意見・ご感想など、お気軽にお声がけください。
       </p>
 
-      <div class="p-6 sm:p-8 rounded-3xl bg-gyaru-dark border-2 border-gyaru-hotpink text-left shadow-[0_0_35px_rgba(255,0,127,0.4)]">
-        <form onsubmit="event.preventDefault(); alert('💖 メッセージ届いたよ！マジありがと〜〜！爆速で返すね🤙✨');" class="space-y-4">
+      <div class="p-6 sm:p-8 rounded-3xl bg-deco-dark border-2 border-deco-pink text-left shadow-[0_0_35px_rgba(255,42,141,0.4)]">
+        <form onsubmit="event.preventDefault(); alert('✨ メッセージを受け付けました！お問い合わせありがとうございます💖');" class="space-y-4">
           <div>
             <label class="block text-xs font-black text-pink-200 mb-1">お名前 (Name)</label>
-            <input type="text" required placeholder="宇宙 ギャル美" class="w-full px-4 py-3 rounded-2xl border-2 border-gyaru-hotpink/50 bg-gyaru-black text-white placeholder-slate-500 text-sm focus:outline-hidden focus:border-gyaru-cyan focus:ring-2 focus:ring-gyaru-cyan font-bold" />
+            <input type="text" required placeholder="山田 太郎" class="w-full px-4 py-3 rounded-2xl border-2 border-deco-pink/50 bg-deco-black text-white placeholder-slate-500 text-sm focus:outline-hidden focus:border-deco-cyan focus:ring-2 focus:ring-deco-cyan font-medium" />
           </div>
           <div>
             <label class="block text-xs font-black text-pink-200 mb-1">メールアドレス (Email)</label>
-            <input type="email" required placeholder="gal@cosmic.com" class="w-full px-4 py-3 rounded-2xl border-2 border-gyaru-hotpink/50 bg-gyaru-black text-white placeholder-slate-500 text-sm focus:outline-hidden focus:border-gyaru-cyan focus:ring-2 focus:ring-gyaru-cyan font-bold" />
+            <input type="email" required placeholder="example@email.com" class="w-full px-4 py-3 rounded-2xl border-2 border-deco-pink/50 bg-deco-black text-white placeholder-slate-500 text-sm focus:outline-hidden focus:border-deco-cyan focus:ring-2 focus:ring-deco-cyan font-medium" />
           </div>
           <div>
             <label class="block text-xs font-black text-pink-200 mb-1">メッセージ内容 (Message)</label>
-            <textarea rows="4" required placeholder="一緒に爆盛れなサイト作ろ〜！とか何でも書いてね💖" class="w-full px-4 py-3 rounded-2xl border-2 border-gyaru-hotpink/50 bg-gyaru-black text-white placeholder-slate-500 text-sm focus:outline-hidden focus:border-gyaru-cyan focus:ring-2 focus:ring-gyaru-cyan font-bold"></textarea>
+            <textarea rows="4" required placeholder="ご用件やご相談内容をご記入ください..." class="w-full px-4 py-3 rounded-2xl border-2 border-deco-pink/50 bg-deco-black text-white placeholder-slate-500 text-sm focus:outline-hidden focus:border-deco-cyan focus:ring-2 focus:ring-deco-cyan font-medium"></textarea>
           </div>
-          <button type="submit" class="w-full py-4 px-6 bg-gradient-to-r from-gyaru-hotpink via-gyaru-purple to-gyaru-cyan text-white font-black text-base rounded-2xl border-2 border-gyaru-gold shadow-[0_0_20px_rgba(255,0,127,0.7)] hover:scale-[1.02] transition-all cursor-pointer">
-            ✨ メッセージ送信するし〜！ 🚀💖
+          <button type="submit" class="shine-effect w-full py-4 px-6 bg-gradient-to-r from-deco-hotpink via-deco-purple to-deco-cyan text-white font-black text-base rounded-2xl border-2 border-deco-gold shadow-[0_0_20px_rgba(255,42,141,0.7)] hover:scale-[1.02] transition-all cursor-pointer">
+            ✨ メッセージを送信する 🚀💖
           </button>
         </form>
       </div>
@@ -479,34 +483,34 @@
   <!-- ========================================================
        フッター
        ======================================================== -->
-  <footer class="relative z-10 bg-gyaru-black py-10 border-t-2 border-gyaru-hotpink/40 text-pink-300 text-xs text-center font-bold">
+  <footer class="relative z-10 bg-deco-black py-10 border-t-2 border-deco-pink/40 text-pink-300 text-xs text-center font-bold">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <span class="text-xl">🌺🪐</span>
-        <span class="font-logo text-lg text-white">GAL×SPACE.PORTFOLIO</span>
-        <span class="text-pink-400 ml-2">© 2026 Crafted with Gal Love 💖</span>
+        <span class="text-xl">💎🪐</span>
+        <span class="font-logo text-lg text-white">COSMIC.DECO</span>
+        <span class="text-slate-400 ml-2">© 2026 Crafted with Cosmic Deco Magic ✨</span>
       </div>
       <div class="flex items-center gap-6 font-black">
-        <a href="#works" class="hover:text-gyaru-cyan transition-colors">Works</a>
-        <a href="#about" class="hover:text-gyaru-gold transition-colors">About</a>
-        <a href="#skills" class="hover:text-gyaru-cyan transition-colors">Skills</a>
-        <a href="#contact" class="hover:text-gyaru-hotpink transition-colors">Contact</a>
+        <a href="#works" class="hover:text-deco-cyan transition-colors">Works</a>
+        <a href="#about" class="hover:text-deco-gold transition-colors">About</a>
+        <a href="#skills" class="hover:text-deco-cyan transition-colors">Skills</a>
+        <a href="#contact" class="hover:text-deco-hotpink transition-colors">Contact</a>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================
-       作品詳細モーダル (全画面 ギャルデココクピット)
+       作品詳細モーダル (全画面 宇宙デコレーション)
        ======================================================== -->
-  <div id="work-modal" class="modal-closed fixed inset-0 z-50 bg-gyaru-black/90 backdrop-blur-2xl flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
+  <div id="work-modal" class="modal-closed fixed inset-0 z-50 bg-deco-black/90 backdrop-blur-2xl flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
     <div id="modal-container" class="relative w-full max-w-5xl rounded-[32px] overflow-hidden max-h-[92vh] flex flex-col my-auto text-white">
       
       <!-- モーダル上部クローズボタンバー -->
-      <div class="sticky top-0 z-20 bg-gyaru-dark/95 backdrop-blur-md border-b-2 border-gyaru-hotpink/60 px-5 sm:px-6 py-4 flex items-center justify-between">
-        <span class="text-xs font-black text-gyaru-gold flex items-center gap-2 uppercase tracking-wider">
-          <span class="text-base">💖🪐</span> MISSION DETAILS (マジ神解説)
+      <div class="sticky top-0 z-20 bg-deco-dark/95 backdrop-blur-md border-b-2 border-deco-pink/60 px-5 sm:px-6 py-4 flex items-center justify-between">
+        <span class="text-xs font-black text-deco-gold flex items-center gap-2 uppercase tracking-wider">
+          <span class="text-base">💎🪐</span> PROJECT DETAILS
         </span>
-        <button id="modal-close-btn" class="w-9 h-9 rounded-full bg-gyaru-hotpink text-white hover:bg-gyaru-cyan flex items-center justify-center transition-all cursor-pointer border-2 border-gyaru-gold shadow-md" aria-label="閉じる">
+        <button id="modal-close-btn" class="w-9 h-9 rounded-full bg-deco-hotpink text-white hover:bg-deco-cyan flex items-center justify-center transition-all cursor-pointer border-2 border-deco-gold shadow-md" aria-label="閉じる">
           <i class="fa-solid fa-xmark text-base"></i>
         </button>
       </div>
